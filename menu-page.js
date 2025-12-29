@@ -1,38 +1,127 @@
+const OPTION_PRESETS = {
+  sandwich: [
+    {
+      title: "Bread Choice",
+      type: "radio",
+      choices: ["Plain roll", "Score garlic parmesan roll", "Jalapeno Score garlic parmesan roll", "Cheddar roll", "Croissant", "bagel"]
+    }
+  ],
+
+  milkTeaToppings: [
+    {
+      title: "Add-ons",
+      type: "checkbox",
+      choices: ["Tapioca Pearl", "Lychee Jelly", "Rainbow Jelly", "Coffee Jelly", "Mango Jelly", "Crystal white pearls", "Mango popping"]
+    }
+  ],
+
+  classicBagel: [
+    {
+     title: "Bagel Choice",
+     type: "radio",
+     choices: ["Plain bagel","Everything bagel","Cinnamon Crunch bagel","Sesame bagel","Strawberry Bagel","Cinnamon Raisin bagel","Salt bagel"," Sourdough bagel","Onion bagel"," Garlic bagel"," Whool Wheat Raisin bagel","Poppy bagel","Bluberry bagel","Cranberry bagel"]
+    },
+    { 
+      title: "With Cream Cheese",
+      type: "radio",
+      choices: ["Peanut butter", "Green onions cream cheese", "Garlic herb cream cheese", "Sundries tomatoes cream cheese", "Veggie cream cheese", "Blueberry cream cheese","Spinach and garlic cream cheese"]
+    }
+  ],
+
+   gourmetBagel: [
+    {
+     title: "Bagel Choice",
+     type: "radio",
+     choices: ["Blue Berry Crunch bagel","Score Garlic bagel","Asiago bagel","Chocolate Chip bagel","Spinach Parmesan bagel","Jalapeno Cheddar bagel"," Cheddar Cheese bagel"]
+    },
+    { 
+      title: "With Cream Cheese",
+      type: "radio",
+      choices: ["Peanut butter", "Green onions cream cheese", "Garlic herb cream cheese", "Sundries tomatoes cream cheese", "Veggie cream cheese", "Blueberry cream cheese","Spinach and garlic cream cheese"]
+    }
+  ],
+
+   specialBagel: [
+    {
+     title: "Bagel Choice",
+     type: "radio",
+     choices: ["Spinach Mushroom Provolone bagel", "Score Garlic Jalapeno Bagel", "Bacon Jalapeno bagel", "Cheddar Bacon bagel"]
+    },
+    { 
+      title: "With Cream Cheese",
+      type: "radio",
+      choices: ["Peanut butter", "Green onions cream cheese", "Garlic herb cream cheese", "Sundries tomatoes cream cheese", "Veggie cream cheese", "Blueberry cream cheese","Spinach and garlic cream cheese"]
+    }
+  ],
+  
+     breakfastBagel: [
+    {
+     title: "Addtional Extras",
+     type: "checkbox",
+     choices: ["Add extra meat", "Add sprout", "Add tomatoes", "Add onion", "Add cucumbers","Add butter"]
+    }
+  ] 
+
+
+};
+
 const menuData = [
   { category: "Most Popular", items: [
-      { name: "Breakfast Ham Bagel", desc: "Bagel with ham, perfect for breakfast", price: "$1.50", image: "/images/bagel/breakfast_ham.jpg" },
-      { name: "Breakfast Sausage Bagel", desc: "Bagel with sausage, savory and delicious", price: "$1.75", image: "images/bagel/breakfast_sausage.jpg" },
-      { name: "Breakfast Bacon Bagel", desc: "Bagel with crispy bacon", price: "$1.75", image: "images/bagel/breakfast_bacon.jpg" },
-      { name: "Ham Croissant", desc: "Flaky croissant with ham", price: "$1.75", image: "images/crossaint_ham.jpg" },
-      { name: "Nova Lox Bagel", desc: "Bagel with smoked salmon", price: "$1.75", image: "images/nova_lox.jpg" },
-      { name: "Vietnamese Coffee", desc: "Rich and sweet iced coffee", price: "$1.75", image: "images/vietnamese_coffee.jpg" }
+      { name: "Breakfast Egg Ham Cheese Bagel", desc: "Bagel with ham, perfect for breakfast", price: "$8.25", image: "/images/bagel/breakfast_ham.jpg", optionsPreset: "breakfastBagel" },
+      { name: "Breakfast Egg Sausage Cheese Bagel", desc: "Bagel with sausage, savory and delicious", price: "$8.25", image: "images/bagel/breakfast_sausage.jpg",optionsPreset: "breakfastBagel" },
+      { name: "Breakfast Egg Bacon Cheese Bagel", desc: "Bagel with crispy bacon", price: "$8.25", image: "images/bagel/breakfast_bacon.jpg",optionsPreset: "breakfastBagel"},
+      { name: "Breakfast Egg Ham Cheese Croissant", desc: "Flaky croissant with ham", price: "$9.75", image: "images/crossaint_ham.jpg", optionsPreset: "breakfastBagel" },
+      { name: "Nova Lox Bagel", desc: "Bagel with smoked salmon", price: "$10.99", image: "images/nova_lox.jpg", optionsPreset: "breakfastBagel"},
+      { name: "Vietnamese Coffee", desc: "Rich and sweet iced coffee", price: "$6.50", image: "images/vietnamese_coffee.jpg", optionsPreset: "milkTeaToppings"}
     ]
   },
   { category: "Bagels", items: [
-      { name: "Classic Plain Bagel", desc: "Freshly baked classic bagels", price: "$1.50", image: "images/bagel/classic_bagel.jpg" },
-      { name: "Gourmet Bagel", desc: "Topped with extra toppings for more flavor", price: "$1.75", image: "images/bagel/gourmet_bagel.jpg" },
-      { name: "Special Bagel", desc: "Unique flavors baked fresh daily", price: "$1.75", image: "images/bagel/special_bagel.jpg" }
+      { name: "Classic Bagel", desc: "Freshly baked classic bagels", price: "$1.95", image: "images/bagel/classic_bagel.jpg", optionsPreset: "classicBagel" },
+      { name: "Gourmet Bagel", desc: "Topped with extra toppings for more flavor", price: "$2.05", image: "images/bagel/gourmet_bagel.jpg", optionsPreset: "gourmetBagel" },
+      { name: "Special Bagel", desc: "Unique flavors baked fresh daily", price: "$2.25", image: "images/bagel/special_bagel.jpg",optionsPreset: "specialBagel" }
     ]
-  },
+  }, 
+
+
   { category: "Sandwiches", items: [
-      { name: "Main Street Club Sandwich", desc: "Classic club sandwich with turkey and bacon", price: "$1.50", image: "images/sandwich/main_street_club_sandwich.jpg" },
-      { name: "Main Street Special", desc: "Signature sandwich with fresh ingredients", price: "$1.50", image: "images/sandwich/main_street_special_sandwich.jpg" },
-      { name: "Pastrami Sandwich", desc: "Savory pastrami with mustard on fresh bread", price: "$1.50", image: "images/sandwich/pastrami_sandwich.jpg" },
-      { name: "Roast Beef Sandwich", desc: "Tender roast beef with cheese", price: "$1.50", image: "images/sandwich/roast_beef_sandwich.jpg" },
-      { name: "Tuna Salad Sandwich", desc: "Fresh tuna salad on a soft roll", price: "$1.50", image: "images/sandwich/tuna_salad_sandwich.jpg" },
-      { name: "Turkey Bacon Avocado Sandwich", desc: "Turkey, bacon, and avocado on fresh bread", price: "$1.50", image: "images/sandwich/turkey_bacon_avacado_sandwich.jpg" }
+      { name: "Main Street Club Sandwich", desc: "Classic club sandwich with turkey and bacon", price: "$9.75", image: "images/sandwich/main_street_club_sandwich.jpg",optionsPreset: "sandwich" },
+      { name: "Main Street Special", desc: "Signature sandwich with fresh ingredients", price: "$9.25", image: "images/sandwich/main_street_special_sandwich.jpg", optionsPreset: "sandwich"},
+      { name: "Pastrami Sandwich", desc: "Savory pastrami with mustard on fresh bread", price: "$8.75", image: "images/sandwich/pastrami_sandwich.jpg",optionsPreset: "sandwich" },
+      { name: "Roast Beef Sandwich", desc: "Tender roast beef with cheese", price: "$8.75", image: "images/sandwich/roast_beef_sandwich.jpg",optionsPreset: "sandwich" },
+      { name: "Tuna Salad Sandwich", desc: "Fresh tuna salad on a soft roll", price: "$8.75", image: "images/sandwich/tuna_salad_sandwich.jpg",optionsPreset: "sandwich" },
+      { name: "Turkey Bacon Avocado Sandwich", desc: "Turkey, bacon, and avocado on fresh bread", price: "$9.75", image: "images/sandwich/turkey_bacon_avacado_sandwich.jpg",optionsPreset: "sandwich"},
+      { name: "Avacado Veggie Sandwich", desc: "Turkey, bacon, and avocado on fresh bread", price: "$8.25", image: "images/sandwich/avacado_veggies.jpg",optionsPreset: "sandwich"},
+      { name: "Grilled Chicken Club", desc: "Turkey, bacon, and avocado on fresh bread", price: "$8.25", image: "images/sandwich/grilled_chicken_club.jpg",optionsPreset: "sandwich"},
+      { name: "Turkey Sandwich", desc: "Turkey and vegetables fresh bread", price: "$8.75", image: "images/sandwich/turkey_sandwich.jpg",optionsPreset: "sandwich"},
+      { name: "Turkey Sandwich", desc: "Turkey and vegetables fresh bread", price: "$8.75", image: "images/sandwich/ham_sandwich.jpg",optionsPreset: "sandwich"},
+      { name: "Turkey Sandwich", desc: "Turkey and vegetables fresh bread", price: "$9.75", image: "images/sandwich/turkey_cranberry_sandwich.jpg",optionsPreset: "sandwich"}
     ]
   },
-  { category: "Drinks", items: [
+
+  { category: "Specialty", items: [
+    { name: "Pepperoni Pizza Bagel", desc: "Bagel topped with pepperoni, marinara, and cheese", price: "$4.50", image: "images/specialty/pep_pizza_bagel.jpg" },
+    { name: "Plain Bagel Dog", desc: "Classic hot dog wrapped in a fresh plain bagel", price: "$4.75", image: "images/specialty/plain_bagel_dog.jpg" },
+    { name: "Jalapeño Bagel Dog", desc: "Hot dog wrapped in a jalapeño-flavored bagel", price: "$5.25", image: "images/specialty/jalapeno_bagel_dog.jpg" },
+    { name: "Parmesan Bagel Dog", desc: "Hot dog wrapped in a parmesan cheese bagel", price: "$5.25", image: "images/specialty/parmesan_bagel_dog.jpg" },
+    { name: "Butter Croissant", desc: "Flaky, buttery croissant baked fresh", price: "$3.25", image: "images/specialty/butter_croissant.jpg" },
+    { name: "Strawberry Scone", desc: "Sweet scone made with real strawberries", price: "$4.00", image: "images/specialty/strawberry_scone.jpg" },
+    { name: "Blueberry Scone", desc: "Soft baked scone with fresh blueberries", price: "$4.00", image: "images/specialty/blueberry_scone.jpg" },
+    { name: "Chocolate Chip Scone", desc: "Classic scone loaded with chocolate chips", price: "$4.00", image: "images/specialty/chocolate_chip_scone.jpg" },
+    { name: "Cinnamon Roll", desc: "Soft cinnamon roll with sweet icing", price: "$5.25", image: "images/specialty/cinnamon_roll.jpg" }
+    ]
+  },
+
+  { category: "Hot Drinks", items: [
       { name: "Vietnamese Coffee", desc: "Rich and sweet iced coffee", price: "$1.75", image: "images/vietnamese_coffee.jpg" },
       { name: "Sesame Milk Drink", desc: "Creamy sesame-flavored milk beverage", price: "$1.75", image: "images/sesame.jpg" }
     ]
   },
-  { category: "Other", items: [
-      { name: "Pepperoni Pizza Bagel", desc: "Bagel topped with pepperoni and cheese", price: "$1.50", image: "images/other/pep_pizza_bagel.jpg" },
-      { name: "Plain Bagel Dog", desc: "Bagel wrapped around a hot dog", price: "$1.75", image: "images/other/plain_bagel_dog.jpg" }
+  { category: "Cold Drinks", items: [
+      { name: "Vietnamese Coffee", desc: "Rich and sweet iced coffee", price: "$1.75", image: "images/vietnamese_coffee.jpg" },
+      { name: "Sesame Milk Drink", desc: "Creamy sesame-flavored milk beverage", price: "$1.75", image: "images/sesame.jpg" }
     ]
   },
+
 ];
 
 // ===========================
@@ -174,33 +263,65 @@ document.addEventListener("DOMContentLoaded", () => {
   // ===========================
   // Event Listeners
   // ===========================
+// ===========================
+// Menu item click
+// ===========================
+document.getElementById("menu-container").addEventListener("click", e => {
+  const item = e.target.closest(".menu-item");
+  if (!item) return;
 
-  // Menu item click
-  document.getElementById("menu-container").addEventListener("click", e=>{
-    const item = e.target.closest(".menu-item");
-    if(!item) return;
+  const category = item.dataset.category;
+  const index = item.dataset.index;
+  const menuItem = menuData.find(c => c.category === category).items[index];
 
-    const category = item.dataset.category;
-    const index = item.dataset.index;
-    const menuItem = menuData.find(c=>c.category===category).items[index];
+  modalName.textContent = menuItem.name;
+  modalDesc.textContent = menuItem.desc;
+  modalPrice.textContent = menuItem.price;
+  modalImage.src = menuItem.image;
+  modalImage.alt = menuItem.name;
 
-    modalName.textContent = menuItem.name;
-    modalDesc.textContent = menuItem.desc;
-    modalPrice.textContent = menuItem.price;
-    modalImage.src = menuItem.image;
-    modalImage.alt = menuItem.name;
+  // ===========================
+  // OPTIONS (NEW SYSTEM)
+  // ===========================
+  const optionGroups = OPTION_PRESETS[menuItem.optionsPreset] || [];
 
-    modalOptions.innerHTML = `
-      <label><input type="checkbox" value="Cheese"> Add Cheese</label>
-      <label><input type="checkbox" value="Lettuce"> Add Lettuce</label>
-      <label><input type="checkbox" value="Tomato"> Add Tomato</label>
-    `;
+  // Clear previous options
+  modalOptions.innerHTML = "";
 
-    modal.style.display = "block";
+  if (optionGroups.length === 0) {
+    modalOptions.innerHTML = "<p>No customizations available</p>";
+  } else {
+    optionGroups.forEach((group, groupIndex) => {
+      const groupDiv = document.createElement("div");
+      groupDiv.className = "modal-option-group";
 
-    addToCartBtn.dataset.category = category;
-    addToCartBtn.dataset.index = index;
-  });
+      groupDiv.innerHTML = `
+        <hr class="modal-divider">
+        <h4 class="modal-options-title">${group.title}</h4>
+        <div class="modal-options-list">
+          ${group.choices.map(choice => `
+            <label>
+              <input
+                type="${group.type}"
+                name="option-group-${groupIndex}"
+                value="${choice}"
+              >
+              ${choice}
+            </label>
+          `).join("")}
+        </div>
+      `;
+
+      modalOptions.appendChild(groupDiv);
+    });
+  }
+
+  modal.style.display = "block";
+
+  addToCartBtn.dataset.category = category;
+  addToCartBtn.dataset.index = index;
+});
+
 
   // Add to cart
   addToCartBtn.addEventListener("click", ()=>{
