@@ -136,6 +136,9 @@ a {
   /* Desktop defaults */
   overflow-x: visible;
   white-space: normal;
+  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, .60); /* subtle shadow below */
+
 }
 
 .menu-subnav-link {
@@ -319,6 +322,7 @@ main {
   padding: 2rem;
   border-radius: 12px;
   width: 90%;
+  
   max-width: 500px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   position: relative;
@@ -332,10 +336,27 @@ main {
   margin: 0.5rem 0;
 }
 
-.modal-content #modal-options label {
-  display: block;
+/* Make each option label a flex container */
+#modal-options label.option-label {
+  display: flex;
+  justify-content: space-between; /* pushes price to the far right */
+  align-items: center;
   margin-bottom: 0.5rem;
+  cursor: pointer;
 }
+
+/* Group input and text together */
+#modal-options .option-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* space between checkbox and text */
+}
+
+/* Price on far right */
+#modal-options .option-price {
+  white-space: nowrap; /* prevents price from wrapping to next line */
+}
+
 
 .modal-content button {
   margin-top: 1rem;
@@ -354,10 +375,10 @@ main {
 
 .modal .close {
   position: absolute;
-  top: 10px;
-  right: 15px;
+  top: 0px;
+  right: 10px;
   color: #333;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
   cursor: pointer;
 }
@@ -369,6 +390,9 @@ main {
   margin: 0 auto 1rem auto;
   border-radius: 9px;
 }
+
+
+
 
 /* ============================================
    CART CSS
@@ -466,6 +490,7 @@ main {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 20px;
 }
 
 #checkout-btn:hover {

@@ -1,25 +1,9 @@
-function parsePrice(priceStr) {
-  return parseFloat(priceStr.replace("$", ""));
-}
-
-function formatPrice(num) {
-  return `$${num.toFixed(2)}`;
-}
-
-
 const OPTION_PRESETS = {
   sandwich: [
     {
       title: "Bread Choice",
       type: "radio",
-      choices: [
-        { label: "Plain roll", price: 1.00},
-        { label: "Score garlic parmesan roll", price: 1.00 },
-        { label: "Jalapeno Score garlic parmesan roll", price: 1.00 },
-        { label: "Cheddar roll", price: 1.00},
-        { label: "Croissant", price: 2.00 },
-        { label: "Bagel", price: 0 }
-      ]
+      choices: ["Plain roll", "Score garlic parmesan roll", "Jalapeno Score garlic parmesan roll", "Cheddar roll", "Croissant", "bagel"]
     }
   ],
 
@@ -27,198 +11,80 @@ const OPTION_PRESETS = {
     {
       title: "Add-ons",
       type: "checkbox",
-      choices: [
-        { label: "Tapioca Pearl", price: 0.75 },
-        { label: "Lychee Jelly", price: 0.75 },
-        { label: "Rainbow Jelly", price: 0.75 },
-        { label: "Coffee Jelly", price: 0.75 },
-        { label: "Mango Jelly", price: 0.75 },
-        { label: "Crystal white pearls", price: 1.00 },
-        { label: "Mango popping", price: 1.00 }
-      ]
+      choices: ["Tapioca Pearl", "Lychee Jelly", "Rainbow Jelly", "Coffee Jelly", "Mango Jelly", "Crystal white pearls", "Mango popping"]
     }
   ],
 
-  classicBagelwithCream: [
+  classicBagel: [
     {
-      title: "Bagel Choice",
-      type: "radio",
-      choices: [
-        { label: "Plain bagel", price: 0 },
-        { label: "Everything bagel", price: 0 },
-        { label: "Cinnamon Crunch bagel", price: 0 },
-        { label: "Sesame bagel", price: 0 },
-        { label: "Strawberry Bagel", price: 0 },
-        { label: "Cinnamon Raisin bagel", price: 0 },
-        { label: "Salt bagel", price: 0 },
-        { label: "Sourdough bagel", price: 0 },
-        { label: "Onion bagel", price: 0 },
-        { label: "Garlic bagel", price: 0 },
-        { label: "Whole Wheat Raisin bagel", price: 0 },
-        { label: "Poppy bagel", price: 0 },
-        { label: "Blueberry bagel", price: 0 },
-        { label: "Cranberry bagel", price: 0 }
-      ]
+     title: "Bagel Choice",
+     type: "radio",
+     choices: ["Plain bagel","Everything bagel","Cinnamon Crunch bagel","Sesame bagel","Strawberry Bagel","Cinnamon Raisin bagel","Salt bagel"," Sourdough bagel","Onion bagel"," Garlic bagel"," Whool Wheat Raisin bagel","Poppy bagel","Bluberry bagel","Cranberry bagel"]
     },
-  ],
-
-  gourmetBagelwithCream: [
-    {
-      title: "Bagel Choice",
-      type: "radio",
-      choices: [
-        { label: "Blue Berry Crunch bagel", price: 0 },
-        { label: "Score Garlic bagel", price: 0 },
-        { label: "Asiago bagel", price: 0 },
-        { label: "Chocolate Chip bagel", price: 0 },
-        { label: "Spinach Parmesan bagel", price: 0 },
-        { label: "Jalapeno Cheddar bagel", price: 0 },
-        { label: "Cheddar Cheese bagel", price: 0 }
-      ]
-    },
-  ],
-
-  specialBagelwithCream: [
-    {
-      title: "Bagel Choice",
-      type: "radio",
-      choices: [
-        { label: "Spinach Mushroom Provolone bagel", price: 0 },
-        { label: "Score Garlic Jalapeno Bagel", price: 0 },
-        { label: "Bacon Jalapeno bagel", price: 0 },
-        { label: "Cheddar Bacon bagel", price: 0 }
-      ]
-    },
-  ],
-
-
-  bagelWithCreamCheese: [
-    {
-      title: "Bagel Choice",
-      type: "radio",
-      choices: [
-        { label: "Plain bagel", price: 0 },
-        { label: "Everything bagel", price: 0 },
-        { label: "Cinnamon Crunch bagel", price: 0 },
-        { label: "Sesame bagel", price: 0 },
-        { label: "Strawberry Bagel", price: 0 },
-        { label: "Cinnamon Raisin bagel", price: 0 },
-        { label: "Salt bagel", price: 0 },
-        { label: "Sourdough bagel", price: 0 },
-        { label: "Onion bagel", price: 0 },
-        { label: "Garlic bagel", price: 0 },
-        { label: "Whole Wheat Raisin bagel", price: 0 },
-        { label: "Poppy bagel", price: 0 },
-        { label: "Blueberry bagel", price: 0 },
-        { label: "Cranberry bagel", price: 0 },
-                { label: "Blue Berry Crunch bagel", price: 0 },
-        { label: "Score Garlic bagel", price: 0 },
-        { label: "Asiago bagel", price: 0 },
-        { label: "Chocolate Chip bagel", price: 0 },
-        { label: "Spinach Parmesan bagel", price: 0 },
-        { label: "Jalapeno Cheddar bagel", price: 0 },
-        { label: "Cheddar Cheese bagel", price: 0 },
-                { label: "Spinach Mushroom Provolone bagel", price: 0 },
-        { label: "Score Garlic Jalapeno Bagel", price: 0 },
-        { label: "Bacon Jalapeno bagel", price: 0 },
-        { label: "Cheddar Bacon bagel", price: 0 }
-      ]
-    },
-    {
+    { 
       title: "With Cream Cheese",
       type: "radio",
-      choices: [
-        { label: "Peanut butter", price: 0 },
-        { label: "Green onions cream cheese", price: 0 },
-        { label: "Garlic herb cream cheese", price: 0 },
-        { label: "Sundries tomatoes cream cheese", price: 0 },
-        { label: "Veggie cream cheese", price: 0 },
-        { label: "Blueberry cream cheese", price: 0 },
-        { label: "Spinach and garlic cream cheese", price: 0 }
-      ]
+      choices: ["Peanut butter", "Green onions cream cheese", "Garlic herb cream cheese", "Sundries tomatoes cream cheese", "Veggie cream cheese", "Blueberry cream cheese","Spinach and garlic cream cheese"]
     }
   ],
 
-  breakfastBagel: [
+   gourmetBagel: [
     {
-      title: "Additional Extras",
-      type: "checkbox",
-      choices: [
-        { label: "Extra meat", price: 3.50 },
-        { label: "Sprouts", price: 1.50 },
-        { label: "Tomatoes", price: 1.25 },
-        { label: "Onion", price: 1.25 },
-        { label: "Cucumbers", price: 1.25 },
-        { label: "Butter", price: 1.50 },
-        { label: "Spinach & Mushrooms", price: 1.50}
-      ]
+     title: "Bagel Choice",
+     type: "radio",
+     choices: ["Blue Berry Crunch bagel","Score Garlic bagel","Asiago bagel","Chocolate Chip bagel","Spinach Parmesan bagel","Jalapeno Cheddar bagel"," Cheddar Cheese bagel"]
     },
-
-    {
-      title: "Other Choices",
-      type: "checkbox",
-      choices: [
-        { label: "Cheddar Cheese", price: .25 },
-        { label: "Jack Cheese", price: .25 },
-        { label: "Add Extra Eggs", price: 1.50 },
-        { label: "Substitute to Egg Whites", price: 2.50 }
-      ]
-    }
-  ],
-
-  breakfastCroissant: [
-    {
-      title: "Protein Choices",
+    { 
+      title: "With Cream Cheese",
       type: "radio",
-      choices: [
-        { label: "Bacon", price: 0},
-        { label: "Ham", price: 0},
-        { label: "Sausage", price: 0},
-        { label: "Turkey", price: 0 }
-      ]
-    },
-    {
-      title: "Additional Extras",
-      type: "checkbox",
-      choices: [
-        { label: "Extra meat", price: 3.50 },
-        { label: "Sprouts", price: 1.50 },
-        { label: "Tomatoes", price: 1.25 },
-        { label: "Onion", price: 1.25 },
-        { label: "Cucumbers", price: 1.25 },
-        { label: "Butter", price: 1.50 },
-        { label: "Spinach & Mushrooms", price: 1.50}
-      ]
+      choices: ["Peanut butter", "Green onions cream cheese", "Garlic herb cream cheese", "Sundries tomatoes cream cheese", "Veggie cream cheese", "Blueberry cream cheese","Spinach and garlic cream cheese"]
     }
-  ]
+  ],
+
+   specialBagel: [
+    {
+     title: "Bagel Choice",
+     type: "radio",
+     choices: ["Spinach Mushroom Provolone bagel", "Score Garlic Jalapeno Bagel", "Bacon Jalapeno bagel", "Cheddar Bacon bagel"]
+    },
+    { 
+      title: "With Cream Cheese",
+      type: "radio",
+      choices: ["Peanut butter", "Green onions cream cheese", "Garlic herb cream cheese", "Sundries tomatoes cream cheese", "Veggie cream cheese", "Blueberry cream cheese","Spinach and garlic cream cheese"]
+    }
+  ],
+  
+     breakfastBagel: [
+    {
+     title: "Addtional Extras",
+     type: "checkbox",
+     choices: ["Add extra meat", "Add sprout", "Add tomatoes", "Add onion", "Add cucumbers","Add butter"]
+    }
+  ] 
+
+
 };
-
-
 
 const menuData = [
   { category: "Most Popular", items: [
       { name: "Breakfast Egg Ham Cheese Bagel", desc: "Bagel with ham, cheese and egg", price: "$8.25", image: "images/bagel/breakfast_ham.jpg", optionsPreset: "breakfastBagel" },
       { name: "Breakfast Egg Sausage Cheese Bagel", desc: "Bagel with sausage, cheese and egg", price: "$8.25", image: "images/bagel/breakfast_sausage.jpg",optionsPreset: "breakfastBagel" },
       { name: "Breakfast Egg Bacon Cheese Bagel", desc: "Bagel with crispy bacon, cheese and egg", price: "$8.25", image: "images/bagel/breakfast_bacon.jpg",optionsPreset: "breakfastBagel"},
-      { name: "Breakfast Egg with Meat & Cheese Croissant", desc: "Flaky croissant with egg, cheese and meat", price: "$9.75", image: "images/sandwich/crossaint_ham.jpg", optionsPreset: "breakfastCroissant" },
+      { name: "Breakfast Egg Ham Cheese Croissant", desc: "Flaky croissant with ham and cheese", price: "$9.75", image: "images/sandwich/crossaint_ham.jpg", optionsPreset: "breakfastBagel" },
       { name: "Nova Lox Bagel", desc: "Bagel with smoked salmon and cream cheese topped with onions and tomatoes", price: "$10.99", image: "images/bagel/nova_lox.jpg", optionsPreset: "breakfastBagel"},
       { name: "Vietnamese Coffee", desc: "Rich and sweet iced coffee", price: "$6.50", image: "images/drinks/vietnamese_coffee.jpg", optionsPreset: "milkTeaToppings"}
     ]
   },
   { category: "Bagels", items: [
-      { name: "Classic Bagel with Plain Cream Cheese", desc: "Freshly baked classic bagels", price: "$4.00", image: "images/bagel/bagel_cream_cheese2.jpg", optionsPreset: "classicBagelwithCream" },
-      { name: "Gourmet Bagel with Plain Cream Cheese", desc: "Topped with extra toppings for more flavor", price: "$4.30", image: "images/bagel/bagel_cream_cheese2.jpg", optionsPreset: "gourmetBagelwithCream" },
-      { name: "Special Bagel with Plain Cream Cheese", desc: "Unique flavors baked fresh daily", price: "$4.50", image: "images/bagel/bagel_cream_cheese2.jpg",optionsPreset: "specialBagelwithCream" },
-      { name: "Any Bagel with Any Flavor Cream Cheese", desc: "Unique flavors baked fresh daily", price: "$4.99", image: "images/bagel/bagel_cream_cheese2.jpg",optionsPreset: "bagelWithCreamCheese" },
-        { name: "Classic Bagel with No Cream Cheese", desc: "Freshly baked classic bagels", price: "$1.95", image: "images/bagel/classic_bagel.jpg", optionsPreset: "classicBagelwithCream" },
-        { name: "Gourmet Bagel with No Cream Cheese", desc: "Topped with extra toppings for more flavor", price: "$2.05", image: "images/bagel/gourmet_bagel.jpg", optionsPreset: "gourmetBagelwithCream" },
-        { name: "Special Bagel with No Cream Cheese", desc: "Unique flavors baked fresh daily", price: "$2.20", image: "images/bagel/special_bagel.jpg",optionsPreset: "specialBagelwithCream" },
+      { name: "Classic Bagel with Cream Cheese", desc: "Freshly baked classic bagels", price: "$1.95", image: "images/bagel/classic_bagel.jpg", optionsPreset: "classicBagel" },
+      { name: "Gourmet Bagel with Cream Cheese", desc: "Topped with extra toppings for more flavor", price: "$2.05", image: "images/bagel/gourmet_bagel.jpg", optionsPreset: "gourmetBagel" },
+      { name: "Special Bagel with Cream Cheese", desc: "Unique flavors baked fresh daily", price: "$2.25", image: "images/bagel/special_bagel.jpg",optionsPreset: "specialBagel" }
     ]
   }, 
 
 
   { category: "Sandwiches", items: [
-      { name: "Main Street Club Sandwich", desc: "Classic club sandwich with turkey, bacon and vegetables on fresh bread", price: "$9.75", image: "images/sandwich/main_street_special_sandwich.jpg",optionsPreset: "sandwich" },
+      { name: "Main Street Club Sandwich", desc: "Classic club sandwich with turkey, bacon and vegetables on fresh bread", price: "$9.75", image: "images/sandwich/main_street_club_sandwich.jpg",optionsPreset: "sandwich" },
       { name: "Main Street Special", desc: "Signature sandwich with fresh vegetables on fresh bread", price: "$9.25", image: "images/sandwich/main_street_special_sandwich.jpg", optionsPreset: "sandwich"},
       { name: "Pastrami Sandwich", desc: "Savory pastrami with mustard on fresh bread and vegetables on fresh bread", price: "$8.75", image: "images/sandwich/pastrami_sandwich.jpg",optionsPreset: "sandwich" },
       { name: "Roast Beef Sandwich", desc: "Tender roast beef with cheese and vegetables on fresh bread", price: "$8.75", image: "images/sandwich/roast_beef_sandwich.jpg",optionsPreset: "sandwich" },
@@ -409,7 +275,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         </div>
         <div class="cart-item-options" style="margin:5px 0 10px 70px;">
-          ${item.options.length ? `Notes: ${item.options.join(", ")}` : "None"}
+          ${item.options.length ? item.options.join(", ") : "None"}
         </div>
         <div class="cart-item-controls" style="display:flex; align-items:center; justify-content:space-between; margin-left:70px;">
           <div class="cart-item-quantity" style="display:flex; align-items:center; gap:5px;">
@@ -460,109 +326,57 @@ document.getElementById("menu-container").addEventListener("click", e => {
   if (optionGroups.length === 0) {
     modalOptions.innerHTML = "<p>No customizations available</p>";
   } else {
-      optionGroups.forEach((group, groupIndex) => {
-        const groupDiv = document.createElement("div");
-        groupDiv.className = "modal-option-group";
+    optionGroups.forEach((group, groupIndex) => {
+      const groupDiv = document.createElement("div");
+      groupDiv.className = "modal-option-group";
 
-        groupDiv.innerHTML = `
-          <hr class="modal-divider">
-          <h4 class="modal-options-title">${group.title}</h4>
-          <div class="modal-options-list" data-required="${group.type === 'radio' ? 'true' : 'false'}" data-group-index="${groupIndex}">
-            ${group.choices.map(choice => `
-              <label class="option-label">
-                <span class="option-left">
-                  <input
-                    type="${group.type}"
-                    name="option-group-${groupIndex}"
-                    data-price="${choice.price}"
-                    value="${choice.label}"
-                  >
-                  ${choice.label}
-                </span>
-                ${choice.price > 0 ? `<span class="option-price">+${formatPrice(choice.price)}</span>` : ""}
-              </label>
-            `).join("")}
-          </div>
-        `;
+      groupDiv.innerHTML = `
+        <hr class="modal-divider">
+        <h4 class="modal-options-title">${group.title}</h4>
+        <div class="modal-options-list">
+          ${group.choices.map(choice => `
+            <label>
+              <input
+                type="${group.type}"
+                name="option-group-${groupIndex}"
+                value="${choice}"
+              >
+              ${choice}
+            </label>
+          `).join("")}
+        </div>
+      `;
 
-        modalOptions.appendChild(groupDiv);
-      });
+      modalOptions.appendChild(groupDiv);
+    });
   }
 
   modal.style.display = "block";
 
   addToCartBtn.dataset.category = category;
   addToCartBtn.dataset.index = index;
-   checkRequiredSelections();
 });
 
-  // Function to check required selections
-      function checkRequiredSelections() {
-        const optionGroups = modalOptions.querySelectorAll(".modal-options-list");
-        let allSelected = true;
 
-        optionGroups.forEach(group => {
-          if (group.dataset.required === "true") {
-            const checked = group.querySelector('input[type="radio"]:checked');
-            if (!checked) {
-              allSelected = false;
-            }
-          }
-        });
+  // Add to cart
+  addToCartBtn.addEventListener("click", ()=>{
+    const category = addToCartBtn.dataset.category;
+    const index = addToCartBtn.dataset.index;
+    const menuItem = menuData.find(c=>c.category===category).items[index];
+    const selectedOptions = Array.from(modalOptions.querySelectorAll("input:checked")).map(o=>o.value);
 
-        // Update button text and disabled state
-        if (!allSelected) {
-          addToCartBtn.textContent = "Make Required Selection";
-          addToCartBtn.disabled = true;
-        } else {
-          addToCartBtn.textContent = "Add to Cart";
-          addToCartBtn.disabled = false;
-        }
-      }
-
-          // Listen to option selection changes
-    modalOptions.addEventListener("change", () => {
-      checkRequiredSelections();
+    cart.push({
+      name: menuItem.name,
+      price: menuItem.price,
+      options: selectedOptions,
+      image: menuItem.image,
+      quantity: 1
     });
 
-
-
-
-// Add to cart (WITH OPTION PRICING)
-addToCartBtn.addEventListener("click", ()=>{
-
-
-  const category = addToCartBtn.dataset.category;
-  const index = addToCartBtn.dataset.index;
-  const menuItem = menuData.find(c=>c.category===category).items[index];
-
-  const selectedInputs = Array.from(
-    modalOptions.querySelectorAll("input:checked")
-  );
-
-  const extraPrice = selectedInputs.reduce(
-    (sum, input) => sum + parseFloat(input.dataset.price || 0),
-    0
-  );
-
-  const basePrice = parsePrice(menuItem.price);
-  const finalPrice = basePrice + extraPrice;
-
-  cart.push({
-    name: menuItem.name,
-    price: formatPrice(finalPrice), // 👈 UPDATED
-    basePrice: basePrice,            // 👈 NEW (for clarity/future use)
-    extraPrice: extraPrice,          // 👈 NEW
-    options: selectedInputs.map(i => i.value),
-    image: menuItem.image,
-    quantity: 1
+    localStorage.setItem("cart",JSON.stringify(cart));
+    updateCartCount();
+    modal.style.display = "none";
   });
-
-  localStorage.setItem("cart", JSON.stringify(cart));
-  updateCartCount();
-  modal.style.display = "none";
-});
-
 
   // Quantity change
   cartItemsContainer.addEventListener("input", e=>{
