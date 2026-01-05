@@ -719,12 +719,13 @@ checkoutBtn.addEventListener("click", async () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          items: JSON.stringify(cart),        // send cart as JSON string
-          customer_email: customerEmailInput.value, // get from a form input
+          items: cart,
+          customer_email: customerEmailInput.value,
           total_amount: totalAmount,
         }),
       }
     );
+
 
     const data = await response.json();
     if(data.url){
