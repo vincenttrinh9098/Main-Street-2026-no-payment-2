@@ -702,15 +702,12 @@ addToCartBtn.addEventListener("click", () => {
   const checkoutBtn = document.getElementById("checkout-btn");
   
 checkoutBtn.addEventListener("click", async () => {
-  if(cart.length === 0){
+  if (cart.length === 0) {
     alert("Your cart is empty!");
     return;
   }
 
-  const totalAmount = cart.reduce((sum, item) => {
-    const priceNum = parseFloat(item.price.replace("$",""));
-    return sum + priceNum * (item.quantity || 1);
-  }, 0);
+  console.log("Sending cart to backend:", cart); // <-- log cart
 
   try {
     const response = await fetch(
@@ -720,21 +717,24 @@ checkoutBtn.addEventListener("click", async () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           items: cart,
-          customer_email: customerEmailInput.value,
-          total_amount: totalAmount,
+          customer_email: "test@example.com", // optional
+          total_amount: cart.reduce((sum, i) => sum + parseFloat(i.price.replace("$","")) * (i.quantity || 1), 0),
         }),
       }
     );
 
+    console.log("Backend response:", response);
 
     const data = await response.json();
-    if(data.url){
+    console.log("Parsed response:", data);
+
+    if (data.url) {
       window.location.href = data.url; // redirect to Stripe checkout
     } else {
       alert("Failed to create checkout session.");
     }
-  } catch(err){
-    console.error(err);
+  } catch (err) {
+    console.error("Frontend fetch error:", err);
     alert("Error connecting to payment gateway.");
   }
 });
