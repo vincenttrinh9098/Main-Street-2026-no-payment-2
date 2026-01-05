@@ -735,7 +735,7 @@ checkoutBtn.addEventListener("click", async () => {
     }
   } catch (err) {
     console.error("Frontend fetch error:", err);
-    alert("Error connecting to payment gateway.");
+    alert("Error connecting to payment gateway.1");
   }
 });
 
