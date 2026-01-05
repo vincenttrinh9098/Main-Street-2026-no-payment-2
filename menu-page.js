@@ -700,54 +700,44 @@ addToCartBtn.addEventListener("click", () => {
   };
 
   const checkoutBtn = document.getElementById("checkout-btn");
+  
+checkoutBtn.addEventListener("click", async () => {
+  if(cart.length === 0){
+    alert("Your cart is empty!");
+    return;
+  }
 
-  checkoutBtn.addEventListener("click", async () => {
-    if(cart.length === 0){
-      alert("Your cart is empty!");
-      return;
-    }
+  const totalAmount = cart.reduce((sum, item) => {
+    const priceNum = parseFloat(item.price.replace("$",""));
+    return sum + priceNum * (item.quantity || 1);
+  }, 0);
 
-    // Map cart items for Stripe
-    const itemsForStripe = cart.map(item => ({
-      name: item.name,
-      price: parseFloat(item.price.replace("$","")), // convert $string → number
-      quantity: item.quantity || 1
-    }));
-
-    console.log("Items for Stripe:", itemsForStripe);
-
-    try {
-      const response = await fetch(
-        "https://main-street-2026-backend.vercel.app/api/create-checkout-session",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            items: cart.map(item => ({
-              name: item.name,
-              price: parseFloat(item.price.replace("$", "")),
-              quantity: item.quantity || 1,
-              options: item.options,
-              specialInstructions: item.specialInstructions,
-            })),
-            customer_email: "test@example.com", // or get from form input
-          }),
-        }
-      );
-
-
-      const data = await response.json();
-
-      if(data.url){
-        window.location.href = data.url; // redirect to Stripe checkout
-      } else {
-        alert("Failed to create checkout session.");
+  try {
+    const response = await fetch(
+      "https://main-street-2026-backend.vercel.app/api/create-checkout-session",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          items: JSON.stringify(cart),        // send cart as JSON string
+          customer_email: customerEmailInput.value, // get from a form input
+          total_amount: totalAmount,
+        }),
       }
-    } catch(err){
-      console.error(err);
-      alert("Error connecting to payment gateway.");
+    );
+
+    const data = await response.json();
+    if(data.url){
+      window.location.href = data.url; // redirect to Stripe checkout
+    } else {
+      alert("Failed to create checkout session.");
     }
-  });
+  } catch(err){
+    console.error(err);
+    alert("Error connecting to payment gateway.");
+  }
+});
+
 
   
 });
