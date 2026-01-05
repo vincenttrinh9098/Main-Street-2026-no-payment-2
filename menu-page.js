@@ -698,47 +698,5 @@ addToCartBtn.addEventListener("click", () => {
     if(e.target===modal) modal.style.display="none";
     if(e.target===cartModal) cartModal.style.display="none";
   };
-
-  const checkoutBtn = document.getElementById("checkout-btn");
-  
-checkoutBtn.addEventListener("click", async () => {
-  if (cart.length === 0) {
-    alert("Your cart is empty!");
-    return;
-  }
-
-  console.log("Sending cart to backend:", cart); // <-- log cart
-
-  try {
-    const response = await fetch(
-      "https://main-street-2026-backend.vercel.app/api/create-checkout-session",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          items: cart,
-          customer_email: "test@example.com", // optional
-          total_amount: cart.reduce((sum, i) => sum + parseFloat(i.price.replace("$","")) * (i.quantity || 1), 0),
-        }),
-      }
-    );
-
-    console.log("Backend response:", response);
-
-    const data = await response.json();
-    console.log("Parsed response:", data);
-
-    if (data.url) {
-      window.location.href = data.url; // redirect to Stripe checkout
-    } else {
-      alert("Failed to create checkout session.");
-    }
-  } catch (err) {
-    console.error("Frontend fetch error:", err);
-    alert("Error connecting to payment gateway.1");
-  }
-});
-
-
   
 });
