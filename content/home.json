@@ -1,0 +1,90 @@
+{
+  "hero": {
+    "title": "Main Street Bagel Cafe",
+    "subtitle": "From classics to creations — your next favorite is waiting.",
+    "image": "images/extra/bagel_header.png"
+  },
+
+  "sections": [
+    {
+      "id": "bagels",
+      "title": "Delicious Baked Bagels",
+      "description": "Freshly baked every morning with love and the finest ingredients. Choose from favorites like sesame, everything, cinnamon swirl, jalapeño, garlic, cheddar bacon, blueberry, and more — all perfectly topped with our rich, creamy cream cheese or any spread you love!",
+      "image": "images/extra/bagel_cream_cheese.jpg",
+      "ctaText": "View Menu",
+      "ctaLink": "menu-page.html",
+      "reverse": true
+    },
+    {
+      "id": "sandwiches",
+      "title": "Sandwiches",
+      "description": "Power through your day with our signature hearty sandwich. Loaded with your choice of premium deli meats, melted cheese, and fresh, crisp vegetables on a warm, toasted roll, bagel or croissant — the perfect fuel for a satisfying lunch.",
+      "image": "bagel_sandwiches21.jpg",
+      "ctaText": "Start Order",
+      "ctaLink": "menu-page.html",
+      "reverse": false
+    },
+    {
+      "id": "drinks",
+      "title": "Refreshing Drinks",
+      "description": "Discover our drink menu, featuring everything from coffee to creamy smoothies to flavorful milk teas — including customer favorites like our Vietnamese Ice Coffee, Lava Flow Smoothie and Taro Milk Tea.",
+      "image": "images/drinks/lava_flow_smoothie.jpg",
+      "ctaText": "Order Now",
+      "ctaLink": "menu-page.html",
+      "reverse": true
+    }
+  ],
+
+  "popular": {
+    "title": "MOST POPULAR",
+    "subtitle": "See what our customers order",
+    "items": [
+      {
+        "img": "images/bagel/breakfast_ham.jpg",
+        "title": "Breakfast Ham Egg Cheese Bagel",
+        "desc": "Bagel with ham, egg, and cheese"
+      },
+      
+      {
+        "img": "images/bagel/breakfast_bacon.jpg",
+        "title": "Breakfast Bacon Bagel",
+        "desc": "Bagel with crispy bacon and egg"
+      },
+      {
+        "img": "images/bagel/breakfast_sausage.jpg",
+        "title": "Breakfast Sausage Bagel",
+        "desc": "Bagel with savory sausage and egg"
+      },
+      {
+        "img": "images/sandwich/crossaint_ham.jpg",
+        "title": "Ham Croissant Sandwich",
+        "desc": "Flaky croissant with ham and cheese"
+      },
+      {
+        "img": "images/bagel/nova_lox.jpg",
+        "title": "Nova Lox Bagel",
+        "desc": "Bagel with smoked salmon and cream cheese"
+      },
+      {
+        "img": "images/sandwich/turkey_bacon_avacado_sandwich.jpg",
+        "title": "Turkey Bacon Avocado Sandwich",
+        "desc": "Sandwich with turkey, bacon, and avocado"
+      },
+      {
+        "img": "images/drinks/thai_tea_snow_smoothie.jpg",
+        "title": "Thai Tea Snow Smoothie",
+        "desc": "Iced Thai tea blended into a smoothie"
+      },
+      {
+        "img": "images/drinks/lava_flow_smoothie.jpg",
+        "title": "Lava Flow Smoothie",
+        "desc": "Strawberry and banana blended smoothie"
+      },
+      {
+        "img": "images/drinks/vietnamese_coffee.jpg",
+        "title": "Vietnamese Coffee",
+        "desc": "Rich and sweet iced coffee"
+      }
+    ]
+  }
+}

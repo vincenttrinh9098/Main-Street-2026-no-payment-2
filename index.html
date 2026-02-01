@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="home-page.css">
 </head>
 <body>
+
+
   <!-- Header -->
   <header class="header">
     <nav class="nav">
@@ -21,77 +23,93 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-image">
-        <img src="images/extra/bagel_header.png" alt="Freshly baked bagel">        </div>
+      <img id="hero-image" alt="Freshly baked bagel">
       <div class="hero-overlay"></div>
     </div>
+
     <div class="hero-content">
-      <h1 class="hero-title">Main Street Bagel<br>Cafe</h1>
-      <p class="hero-subtitle">From classics to creations — your next favorite is waiting.</p>
+      <h1 class="hero-title" id="hero-title"></h1>
+      <p class="hero-subtitle" id="hero-subtitle"></p>
     </div>
   </section>
 
-    <!-- Bagels Section -->
-  <section class="product-section">
-    <div class="container">
-      <div class="product-grid product-grid-reverse">
-        <div class="product-image-wrapper">
-          <img src="images/extra/bagel_cream_cheese.jpg" alt="Gourmet breakfast sandwich on a fresh bagel" class="product-image">
-        </div>
-        <div class="product-content">
-          <h2 class="product-title">Delicious Baked Bagels</h2>
-          <p class="product-description">
-            Freshly baked every morning with love and the finest ingredients. Choose from favorites like sesame, everything, cinnamon swirl, jalapeño, garlic, cheddar bacon, blueberry, and more — all perfectly topped with our rich, creamy cream cheese or any spread you love!
-          </p>
-          <a href="menu-page.html" class="btn btn-cta">View Menu</a>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- Food Section -->
+    <section class="product-section">
+      <div class="container">
+        <div class="product-grid product-grid-reverse">
 
-    <!-- Breakfast Sandwich Section -->
-  <section class="product-section">
-    <div class="container">
-      <div class="product-grid">
-        <div class="product-image-wrapper">
-          <img src=" bagel_sandwiches21.jpg" alt="Gourmet sandwich on a fresh bagel or roll" class="product-image">
-        </div>
-        <div class="product-content">
-          <h2 class="product-title"> Sandwiches</h2>
-          <p class="product-description">
-            Power through your day with our signature hearty sandwich. Loaded with your choice of premium deli meats, melted cheese, and fresh, crisp vegetables on a warm, toasted roll,bagel or croissant — the perfect fuel for a satisfying lunch.
-          </p>
-          <a href="menu-page.html" class="btn btn-cta">Start Order</a>
-        </div>
-      </div>
-    </div>
-  </section>
+          <div class="product-image-wrapper">
+            <img
+              id="section-bagels-image"
+              class="product-image"
+              alt=""
+            >
+          </div>
 
-  <!-- Drinks Section -->
-  <section class="product-section">
-    <div class="container">
-      <div class="product-grid product-grid-reverse">
-        <div class="product-image-wrapper">
-          <img src="images/drinks/lava_flow_smoothie.jpg" alt="Colorful strawberry smoothie with whipped cream" class="product-image">
-        </div>
-        <div class="product-content">
-          <h2 class="product-title">Refreshing Drinks</h2>
-          <p class="product-description">
-            Discover our drink menu, featuring everything from coffee to creamy smoothies to flavorful milk teas — including customer favorites like our Vietnamese Ice Coffee, Lava Flow Smoothie and Taro Milk Tea.
-          </p>
-          <a href="menu-page.html" class="btn btn-cta">Order Now</a>
+          <div class="product-content">
+            <h2 id="section-bagels-title" class="product-title"></h2>
+            <p id="section-bagels-desc" class="product-description"></p>
+            <a href="menu-page.html" class="btn btn-cta">View Menu</a>
+          </div>
+
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+
+    <section class="product-section">
+      <div class="container">
+        <div class="product-grid">
+
+          <div class="product-image-wrapper">
+            <img
+              id="section-sandwiches-image"
+              class="product-image"
+              alt=""
+            >
+          </div>
+
+          <div class="product-content">
+            <h2 id="section-sandwiches-title" class="product-title"></h2>
+            <p id="section-sandwiches-desc" class="product-description"></p>
+            <a href="menu-page.html" class="btn btn-cta">View Menu</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="product-section">
+      <div class="container">
+        <div class="product-grid product-grid-reverse">
+
+          <div class="product-image-wrapper">
+            <img
+              id="section-drinks-image"
+              class="product-image"
+              alt=""
+            >
+          </div>
+
+          <div class="product-content">
+            <h2 id="section-drinks-title" class="product-title"></h2>
+            <p id="section-drinks-desc" class="product-description"></p>
+            <a href="menu-page.html" class="btn btn-cta">View Menu</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
 
   <!-- Popular Section -->
-   <section class="popular">
-        <div class="container">
-            <h2 class="popular-title">MOST POPULAR</h2>
-            <p class="popular-subtitle">See what our customers order</p>
-            <div class="popular-grid" id="popular-grid"></div>
-        </div>
-   </section>
+    <section class="popular">
+      <div class="container">
+        <h2 class="popular-title" id="popular-title"></h2>
+        <p class="popular-subtitle" id="popular-subtitle"></p>
+        <div class="popular-grid" id="popular-grid"></div>
+      </div>
+    </section>
 
 
 
