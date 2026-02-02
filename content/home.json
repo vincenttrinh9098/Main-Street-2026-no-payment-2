@@ -1,20 +1,10 @@
 {
   "hero": {
-    "title": "Main Street Bagel Cafe",
+    "title": "Main Street Bagel Cafe!!",
     "subtitle": "From classics to creations — your next favorite is waiting.",
     "image": "images/extra/bagel_header.png"
   },
-
   "sections": [
-    {
-      "id": "bagels",
-      "title": "Delicious Baked Bagels",
-      "description": "Freshly baked every morning with love and the finest ingredients. Choose from favorites like sesame, everything, cinnamon swirl, jalapeño, garlic, cheddar bacon, blueberry, and more — all perfectly topped with our rich, creamy cream cheese or any spread you love!",
-      "image": "images/extra/bagel_cream_cheese.jpg",
-      "ctaText": "View Menu",
-      "ctaLink": "menu-page.html",
-      "reverse": true
-    },
     {
       "id": "sandwiches",
       "title": "Sandwiches",
@@ -23,6 +13,15 @@
       "ctaText": "Start Order",
       "ctaLink": "menu-page.html",
       "reverse": false
+    },
+    {
+      "id": "bagels",
+      "title": "Delicious Baked Bagels",
+      "description": "Freshly baked every morning with love and the finest ingredients. Choose from favorites like sesame, everything, cinnamon swirl, jalapeño, garlic, cheddar bacon, blueberry, and more — all perfectly topped with our rich, creamy cream cheese or any spread you love!",
+      "image": "images/extra/bagel_cream_cheese.jpg",
+      "ctaText": "View Menu",
+      "ctaLink": "menu-page.html",
+      "reverse": true
     },
     {
       "id": "drinks",
@@ -34,7 +33,6 @@
       "reverse": true
     }
   ],
-
   "popular": {
     "title": "MOST POPULAR",
     "subtitle": "See what our customers order",
@@ -44,7 +42,6 @@
         "title": "Breakfast Ham Egg Cheese Bagel",
         "desc": "Bagel with ham, egg, and cheese"
       },
-      
       {
         "img": "images/bagel/breakfast_bacon.jpg",
         "title": "Breakfast Bacon Bagel",
