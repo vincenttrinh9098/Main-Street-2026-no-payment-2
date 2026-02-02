@@ -1,11 +1,13 @@
 backend:
-  name: github
+  name: git-gateway
   repo: vincenttrinh9098/Main-Street-2026-no-payment-2
   branch: main
-  # This points to the Bridge's OAuth door instead of its Gateway door
-  base_url: https://decapbridge.com
-  auth_endpoint: /api/oauth/auth
-
+  auth_type: pkce
+  base_url: https://auth.decapbridge.com
+  auth_endpoint: /sites/a2ef3e52-9361-4b33-b064-b5b0323d37f1/pkce
+  auth_token_endpoint: /sites/a2ef3e52-9361-4b33-b064-b5b0323d37f1/token
+  gateway_url: https://gateway.decapbridge.com
+  
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
