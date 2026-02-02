@@ -2,6 +2,7 @@ backend:
   name: github
   repo: vincenttrinh9098/Main-Street-2026-no-payment-2
   branch: main
+  # This points to the Bridge's OAuth door instead of its Gateway door
   base_url: https://decapbridge.com
   auth_endpoint: /api/oauth/auth
 
