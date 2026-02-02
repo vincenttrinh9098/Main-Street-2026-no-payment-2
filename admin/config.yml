@@ -1,39 +1,113 @@
 backend:
-  name: git-gateway
+  name: github
   repo: vincenttrinh9098/Main-Street-2026-no-payment-2
   branch: main
-  identity_url: https://auth.decapbridge.com/sites/a2ef3e52-9361-4b33-b064-b5b0323d37f1
-  gateway_url: https://gateway.decapbridge.com
+  base_url: https://decapbridge.com
+  auth_endpoint: /api/oauth/auth
 
-media_folder: "images"
-public_folder: "/images"
+# ADD THIS LINE:
+public_folder: "/Main-Street-2026-no-payment-2"
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+publish_mode: simple
 
 collections:
-  - name: "content"
-    label: "Website Content"
+  - name: "site"
+    label: "Homepage"
     files:
-      - label: "Homepage"
-        name: "home"
-        file: "content/home.json"
+      - file: "content/home.json"
+        label: "Homepage Content"
+        name: "homepage"
         fields:
-          # Hero Section
-          - { label: "Main Heading", name: "hero.title", widget: "string" }
-          - { label: "Banner Subtext", name: "hero.subtitle", widget: "text" }
-          - { label: "Hero Image", name: "hero.image", widget: "image" }
-          
-          # Mid-Page Sections List
-          - label: "Mid-Page Content"
+
+          # --------------------
+          # HERO SECTION
+          # --------------------
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - label: "Hero Title"
+                name: "title"
+                widget: "string"
+
+              - label: "Hero Subtitle"
+                name: "subtitle"
+                widget: "text"
+
+              - label: "Hero Image"
+                name: "image"
+                widget: "image"
+
+          # --------------------
+          # MAIN SECTIONS
+          # --------------------
+          - label: "Homepage Sections"
             name: "sections"
             widget: "list"
+            summary: "{{title}}"
             fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
-              - { label: "Image", name: "image", widget: "image" }
+              - label: "Section ID"
+                name: "id"
+                widget: "string"
+                hint: "Internal use only. Do not change unless instructed."
 
-          # Popular Items List
-          - label: "Customer Favorites"
-            name: "popular.items"
-            widget: "list"
+              - label: "Section Title"
+                name: "title"
+                widget: "string"
+
+              - label: "Description"
+                name: "description"
+                widget: "text"
+
+              - label: "Image"
+                name: "image"
+                widget: "image"
+
+              - label: "CTA Button Text"
+                name: "ctaText"
+                widget: "string"
+
+              - label: "CTA Link"
+                name: "ctaLink"
+                widget: "string"
+                default: "menu-page.html"
+
+              - label: "Reverse Layout"
+                name: "reverse"
+                widget: "boolean"
+                default: false
+
+          # --------------------
+          # POPULAR ITEMS
+          # --------------------
+          - label: "Popular Section"
+            name: "popular"
+            widget: "object"
             fields:
-              - { label: "Item Name", name: "title", widget: "string" }
-              - { label: "Price", name: "price", widget: "string" }
+              - label: "Section Title"
+                name: "title"
+                widget: "string"
+
+              - label: "Section Subtitle"
+                name: "subtitle"
+                widget: "string"
+
+              - label: "Popular Items"
+                name: "items"
+                widget: "list"
+                summary: "{{title}}"
+                fields:
+                  - label: "Image"
+                    name: "img"
+                    widget: "image"
+
+                  - label: "Item Title"
+                    name: "title"
+                    widget: "string"
+
+                  - label: "Description"
+                    name: "desc"
+                    widget: "text"

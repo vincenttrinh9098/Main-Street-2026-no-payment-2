@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" /> <title>Bagel Cafe Content Manager</title>
     <link href="config.yml" type="text/yaml" rel="cms-config-url">
+
+    <script>
+  // This helps GitHub Pages handle the 'clean' URL redirect from OAuth
+  (function () {
+    const url = new URL(window.location.href);
+    if (url.searchParams.has('code')) {
+      // If we have an auth code, ensure we stay on the index.html page
+      window.history.replaceState(null, null, window.location.pathname + window.location.search + window.location.hash);
+    }
+  })();
+</script>
+
+
   </head>
   <body>
     <script src="https://unpkg.com/decap-cms@^3.10.0/dist/decap-cms.js"></script>
