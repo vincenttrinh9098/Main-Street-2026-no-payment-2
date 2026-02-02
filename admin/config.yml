@@ -1,107 +1,39 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: vincenttrinh9098/Main-Street-2026-no-payment-2
   branch: main
+  base_url: https://decapbridge.com
+  auth_endpoint: /api/oauth/auth
 
-media_folder: "images/uploads"
-public_folder: "/images/uploads"
-
-publish_mode: simple
+media_folder: "images"
+public_folder: "/images"
 
 collections:
-  - name: "site"
-    label: "Homepage"
+  - name: "content"
+    label: "Website Content"
     files:
-      - file: "content/home.json"
-        label: "Homepage Content"
-        name: "homepage"
+      - label: "Homepage"
+        name: "home"
+        file: "content/home.json"
         fields:
-
-          # --------------------
-          # HERO SECTION
-          # --------------------
-          - label: "Hero Section"
-            name: "hero"
-            widget: "object"
-            fields:
-              - label: "Hero Title"
-                name: "title"
-                widget: "string"
-
-              - label: "Hero Subtitle"
-                name: "subtitle"
-                widget: "text"
-
-              - label: "Hero Image"
-                name: "image"
-                widget: "image"
-
-          # --------------------
-          # MAIN SECTIONS
-          # --------------------
-          - label: "Homepage Sections"
+          # Hero Section
+          - { label: "Main Heading", name: "hero.title", widget: "string" }
+          - { label: "Banner Subtext", name: "hero.subtitle", widget: "text" }
+          - { label: "Hero Image", name: "hero.image", widget: "image" }
+          
+          # Mid-Page Sections List
+          - label: "Mid-Page Content"
             name: "sections"
             widget: "list"
-            summary: "{{title}}"
             fields:
-              - label: "Section ID"
-                name: "id"
-                widget: "string"
-                hint: "Internal use only. Do not change unless instructed."
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Image", name: "image", widget: "image" }
 
-              - label: "Section Title"
-                name: "title"
-                widget: "string"
-
-              - label: "Description"
-                name: "description"
-                widget: "text"
-
-              - label: "Image"
-                name: "image"
-                widget: "image"
-
-              - label: "CTA Button Text"
-                name: "ctaText"
-                widget: "string"
-
-              - label: "CTA Link"
-                name: "ctaLink"
-                widget: "string"
-                default: "menu-page.html"
-
-              - label: "Reverse Layout"
-                name: "reverse"
-                widget: "boolean"
-                default: false
-
-          # --------------------
-          # POPULAR ITEMS
-          # --------------------
-          - label: "Popular Section"
-            name: "popular"
-            widget: "object"
+          # Popular Items List
+          - label: "Customer Favorites"
+            name: "popular.items"
+            widget: "list"
             fields:
-              - label: "Section Title"
-                name: "title"
-                widget: "string"
-
-              - label: "Section Subtitle"
-                name: "subtitle"
-                widget: "string"
-
-              - label: "Popular Items"
-                name: "items"
-                widget: "list"
-                summary: "{{title}}"
-                fields:
-                  - label: "Image"
-                    name: "img"
-                    widget: "image"
-
-                  - label: "Item Title"
-                    name: "title"
-                    widget: "string"
-
-                  - label: "Description"
-                    name: "desc"
-                    widget: "text"
+              - { label: "Item Name", name: "title", widget: "string" }
+              - { label: "Price", name: "price", widget: "string" }
