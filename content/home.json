@@ -6,13 +6,13 @@
   },
   "sections": [
     {
-      "id": "sandwiches",
-      "title": "Sandwiches",
-      "description": "Power through your day with our signature hearty sandwich. Loaded with your choice of premium deli meats, melted cheese, and fresh, crisp vegetables on a warm, toasted roll, bagel or croissant — the perfect fuel for a satisfying lunch.",
-      "image": "images/bagel_sandwiches21.jpg",
-      "ctaText": "Start Order",
+      "id": "drinks",
+      "title": "Testing",
+      "description": "Discover our drink menu, featuring everything from coffee to creamy smoothies to flavorful milk teas — including customer favorites like our Vietnamese Ice Coffee, Lava Flow Smoothie and Taro Milk Tea. TESTTTTING",
+      "image": "images/212955c6-b805-47a4-b3fd-749467b7fcf6-1-.png",
+      "ctaText": "Order Now",
       "ctaLink": "menu-page.html",
-      "reverse": false
+      "reverse": true
     },
     {
       "id": "bagels",
@@ -24,13 +24,13 @@
       "reverse": true
     },
     {
-      "id": "drinks",
-      "title": "Testing",
-      "description": "Discover our drink menu, featuring everything from coffee to creamy smoothies to flavorful milk teas — including customer favorites like our Vietnamese Ice Coffee, Lava Flow Smoothie and Taro Milk Tea. TESTTTTING",
-      "image": "images/212955c6-b805-47a4-b3fd-749467b7fcf6-1-.png",
-      "ctaText": "Order Now",
+      "id": "sandwiches",
+      "title": "Sandwiches",
+      "description": "Power through your day with our signature hearty sandwich. Loaded with your choice of premium deli meats, melted cheese, and fresh, crisp vegetables on a warm, toasted roll, bagel or croissant — the perfect fuel for a satisfying lunch.",
+      "image": "images/bagel_sandwiches21.jpg",
+      "ctaText": "Start Order",
       "ctaLink": "menu-page.html",
-      "reverse": true
+      "reverse": false
     }
   ],
   "popular": {
