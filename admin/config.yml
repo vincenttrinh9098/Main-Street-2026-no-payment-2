@@ -13,8 +13,10 @@ backend:
   auth_token_endpoint: /sites/a2ef3e52-9361-4b33-b064-b5b0323d37f1/token
   gateway_url: https://gateway.decapbridge.com
 
-media_folder: "images/uploads"
-public_folder: "/images/uploads"
+# Global defaults
+media_folder: "images"
+public_folder: "/images"
+
 publish_mode: simple
 
 # 3. Enhanced UX Collections
@@ -29,7 +31,10 @@ collections:
         fields:
           - { label: "Main Headline", name: "hero.title", widget: "string", hint: "The large text at the top." }
           - { label: "Sub-headline", name: "hero.subtitle", widget: "text" }
-          - { label: "Main Image", name: "hero.image", widget: "image" }
+          - label: "Main Image"
+            name: "hero.image"
+            widget: "image"
+            media_folder: "images/uploads" # Hero usually goes in general uploads
 
       - file: "content/home.json"
         label: "2. Page Sections (Sandwiches, Drinks, etc.)"
@@ -38,12 +43,16 @@ collections:
           - label: "Website Sections"
             name: "sections"
             widget: "list"
-            summary: "Section: {{fields.title}}" # Shows 'Section: Sandwiches' in the list
+            summary: "Section: {{fields.title}}"
             fields:
               - { label: "Internal ID", name: "id", widget: "hidden" }
               - { label: "Section Title", name: "title", widget: "string" }
               - { label: "Description Text", name: "description", widget: "text" }
-              - { label: "Section Photo", name: "image", widget: "image" }
+              - label: "Section Photo"
+                name: "image"
+                widget: "image"
+                # This allows the owner to pick from any existing folder
+                media_folder: "images" 
               - { label: "Button Label", name: "ctaText", widget: "string" }
               - { label: "Flip Layout?", name: "reverse", widget: "boolean", hint: "Check this to swap text and image sides." }
 
@@ -56,8 +65,12 @@ collections:
           - label: "Menu Items"
             name: "popular.items"
             widget: "list"
-            summary: "{{fields.title}} ({{fields.desc}})" # Displays Bagel Name and Price/Desc at a glance
+            summary: "{{fields.title}}"
             fields:
               - { label: "Item Name", name: "title", widget: "string" }
               - { label: "Short Description", name: "desc", widget: "string" }
-              - { label: "Item Photo", name: "img", widget: "image" }
+              - label: "Item Photo"
+                name: "img"
+                widget: "image"
+                # Since most popular items are bagels, we default here
+                media_folder: "images/bagel"
