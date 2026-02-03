@@ -3,16 +3,80 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bagel Cafe Content Manager</title>
-    <link rel="icon" type="image/png" href="../logo.png" />
-    </head>
+    <title>Main Street Bagel Admin</title>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  </head>
   <body>
     <script src="https://unpkg.com/decap-cms@^3.10.0/dist/decap-cms.js"></script>
-    
+
     <script>
-      // This helps the preview window look like your site
-      // Use the path relative to the admin folder
-      CMS.registerPreviewStyle("../home-page.css"); 
+      // 1. Path Fixer: Ensures images load in the preview pane correctly
+      const fixPath = (path) => {
+        if (!path) return '';
+        return path.startsWith('/') ? path.substring(1) : path;
+      };
+
+      // 2. The Functional Preview Component
+      const HomePreview = ({ entry }) => {
+        const data = entry.getIn(['data']).toJS();
+        if (!data) return null;
+
+        return React.createElement('div', { 
+          style: { padding: '20px', fontFamily: 'system-ui, sans-serif', color: '#333' } 
+        },
+          // --- HERO PREVIEW ---
+          React.createElement('section', { 
+            style: { textAlign: 'center', backgroundColor: '#f5f5f5', padding: '40px 20px', borderRadius: '8px' } 
+          },
+            React.createElement('h1', { style: { fontSize: '2.5rem', margin: '0 0 10px 0' } }, data.hero?.title),
+            React.createElement('p', { style: { fontSize: '1.2rem', color: '#666' } }, data.hero?.subtitle),
+            data.hero?.image && React.createElement('img', { 
+              src: fixPath(data.hero.image), 
+              style: { width: '100%', maxWidth: '500px', marginTop: '20px', borderRadius: '4px' } 
+            })
+          ),
+
+          // --- SECTIONS PREVIEW ---
+          (data.sections || []).map((section, idx) => (
+            React.createElement('div', { 
+              key: idx, 
+              style: { display: 'flex', flexDirection: 'column', padding: '30px 0', borderBottom: '1px solid #eee' } 
+            },
+              React.createElement('h2', null, section.title),
+              React.createElement('p', null, section.description),
+              section.image && React.createElement('img', { 
+                src: fixPath(section.image), 
+                style: { width: '100%', height: '200px', objectFit: 'cover' } 
+              })
+            )
+          )),
+
+          // --- POPULAR ITEMS GRID ---
+          React.createElement('h2', { style: { textAlign: 'center', marginTop: '40px' } }, data.popular?.title),
+          React.createElement('p', { style: { textAlign: 'center', color: '#888' } }, data.popular?.subtitle),
+          React.createElement('div', { 
+            style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginTop: '20px' } 
+          },
+            (data.popular?.items || []).map((item, idx) => (
+              React.createElement('div', { key: idx, style: { border: '1px solid #ddd', padding: '10px', borderRadius: '8px' } },
+                item.img && React.createElement('img', { 
+                  src: fixPath(item.img), 
+                  style: { width: '100%', height: '100px', objectFit: 'cover' } 
+                }),
+                React.createElement('h4', { style: { margin: '10px 0 5px 0' } }, item.title),
+                React.createElement('p', { style: { fontSize: '0.9rem', color: '#666' } }, item.desc)
+              )
+            ))
+          )
+        );
+      };
+
+      // 3. Register the Template with the name 'homepage' from your config
+      CMS.registerPreviewTemplate("homepage", HomePreview);
+      
+      // 4. Register your site CSS to make it look even closer to the real site
+      CMS.registerPreviewStyle("../home-page.css");
     </script>
   </body>
 </html>
