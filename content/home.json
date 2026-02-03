@@ -81,6 +81,11 @@
         "img": "images/drinks/vietnamese_coffee.jpg",
         "title": "Vietnamese Coffee",
         "desc": "Rich and sweet iced coffee"
+      },
+      {
+        "desc": "Nicely done",
+        "title": "test",
+        "img": "/images/bagel_sandwiches.jpeg"
       }
     ]
   }
