@@ -1,56 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8" />
-  <title>Bagel Cafe Admin</title>
-</head>
-<body>
-  <script src="https://unpkg.com/decap-cms@^3.10.0/dist/decap-cms.js"></script>
-  <script>
-    const fixPath = (path) => (path && path.startsWith('/') ? path.substring(1) : path);
-
-    const HomePreview = createClass({
-      render: function() {
-        const { entry, h } = this.props;
-        // Convert Immutable data to a standard JS object
-        const data = entry.getIn(['data']).toJS();
-
-        // Safety check: if data is empty, don't render anything
-        if (!data) return h('div', {}, 'Loading...');
-
-        return h('div', { style: { padding: '20px', fontFamily: 'sans-serif' } },
-          // HERO
-          h('div', { style: { textAlign: 'center', background: '#eee', padding: '10px' } },
-            h('h1', {}, data.hero?.title || 'No Hero Title Set'),
-            data.hero?.image && h('img', { src: fixPath(data.hero.image), style: { width: '200px' } })
-          ),
-
-          // SECTIONS (Handles "Sweets" safely even if empty)
-          h('h2', {}, 'Sections'),
-          (data.sections || []).map((s, i) => {
-            if (!s) return null;
-            return h('div', { key: i, style: { borderBottom: '1px solid #ccc' } },
-              h('h3', {}, s.title || 'Untitled Section'),
-              h('p', {}, 'ID: ' + (s.id || 'No ID set'))
-            );
-          }),
-
-          // POPULAR ITEMS
-          h('h2', {}, data.popular?.title || 'Popular Section'),
-          h('div', { style: { display: 'flex', gap: '10px' } },
-            (data.popular?.items || []).map((item, i) => {
-              if (!item) return null;
-              return h('div', { key: i },
-                item.img && h('img', { src: fixPath(item.img), style: { width: '50px' } }),
-                h('p', {}, item.title || 'Unnamed Item')
-              );
-            })
-          )
-        );
-      }
-    });
-
-    CMS.registerPreviewTemplate("homepage", HomePreview);
-  </script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bagel Cafe Content Manager</title>
+    <link rel="icon" type="image/png" href="../logo.png" />
+    </head>
+  <body>
+    <script src="https://unpkg.com/decap-cms@^3.10.0/dist/decap-cms.js"></script>
+    
+    <script>
+      // This helps the preview window look like your site
+      // Use the path relative to the admin folder
+      CMS.registerPreviewStyle("../home-page.css"); 
+    </script>
+  </body>
 </html>
