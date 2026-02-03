@@ -2,23 +2,14 @@
   "hero": {
     "title": "Main Street Bagel Cafe!!",
     "subtitle": "From classics to creations — your next favorite is waiting!!!!!",
-    "image": "iimages/extra/bagel_cream_cheese.jpg"
+    "image": "images/bagel_header.png"
   },
   "sections": [
-    {
-      "id": "drinks",
-      "title": "Testing",
-      "description": "Discover our drink menu, featuring everything from coffee to creamy smoothies to flavorful milk teas — including customer favorites like our Vietnamese Ice Coffee, Lava Flow Smoothie and Taro Milk Tea. TESTTTTING",
-      "image": "images/212955c6-b805-47a4-b3fd-749467b7fcf6-1-.png",
-      "ctaText": "Order Now",
-      "ctaLink": "menu-page.html",
-      "reverse": true
-    },
     {
       "id": "bagels",
       "title": "Delicious Baked Bagels",
       "description": "Freshly baked every morning with love and the finest ingredients. Choose from favorites like sesame, everything, cinnamon swirl, jalapeño, garlic, cheddar bacon, blueberry, and more — all perfectly topped with our rich, creamy cream cheese or any spread you love!",
-      "image": "images/bagel_sandwiches21.jpg",
+      "image": "images/baked_bagels.jpg",
       "ctaText": "View Menu",
       "ctaLink": "menu-page.html",
       "reverse": true
@@ -31,6 +22,15 @@
       "ctaText": "Start Order",
       "ctaLink": "menu-page.html",
       "reverse": false
+    },
+    {
+      "id": "drinks",
+      "title": "Testing",
+      "description": "Discover our drink menu, featuring everything from coffee to creamy smoothies to flavorful milk teas — including customer favorites like our Vietnamese Ice Coffee, Lava Flow Smoothie and Taro Milk Tea.",
+      "image": "images/lava_flow_smoothie.jpg",
+      "ctaText": "Order Now",
+      "ctaLink": "menu-page.html",
+      "reverse": true
     }
   ],
   "popular": {
