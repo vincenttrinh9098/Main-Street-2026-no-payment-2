@@ -453,6 +453,67 @@
   },
   "menuData": [
     {
+      "category": "Bagels",
+      "items": [
+        {
+          "name": "Classic Bagel with Plain Cream Cheese",
+          "desc": "Freshly baked classic bagels with plain cream cheese",
+          "price": "$4.00",
+          "image": "images/bagel/bagel_cream_cheese2.jpg",
+          "optionsPreset": "classicBagelwithCream"
+        },
+        {
+          "name": "Gourmet Bagel with Plain Cream Cheese",
+          "desc": "Topped with extra toppings for more flavor with plain cream cheese",
+          "price": "$4.30",
+          "image": "images/bagel/bagel_cream_cheese2.jpg",
+          "optionsPreset": "gourmetBagelwithCream"
+        },
+        {
+          "name": "Special Bagel with Plain Cream Cheese",
+          "desc": "Unique flavors baked fresh daily with plain cream cheese",
+          "price": "$4.50",
+          "image": "images/bagel/bagel_cream_cheese2.jpg",
+          "optionsPreset": "specialBagelwithCream"
+        },
+        {
+          "name": "Any Bagel with Any Flavor Cream Cheese",
+          "desc": "Any bagel with plain cream cheese",
+          "price": "$4.99",
+          "image": "images/bagel/bagel_cream_cheese2.jpg",
+          "optionsPreset": "bagelWithCreamCheese"
+        },
+        {
+          "name": "Classic Bagel with No Cream Cheese",
+          "desc": "Freshly baked classic bagels",
+          "price": "$1.95",
+          "image": "images/bagel/classic_bagel.jpg",
+          "optionsPreset": "classicBagelwithCream"
+        },
+        {
+          "name": "Gourmet Bagel with No Cream Cheese",
+          "desc": "Topped with extra toppings for more flavor",
+          "price": "$2.05",
+          "image": "images/bagel/gourmet_bagel.jpg",
+          "optionsPreset": "gourmetBagelwithCream"
+        },
+        {
+          "name": "Special Bagel with No Cream Cheese",
+          "desc": "Unique flavors baked fresh daily",
+          "price": "$2.20",
+          "image": "images/bagel/special_bagel.jpg",
+          "optionsPreset": "specialBagelwithCream"
+        },
+        {
+          "name": "Bakers Dozen",
+          "desc": "Choose up to ANY 13 bagels",
+          "price": "$25.50",
+          "image": "images/bagel/bakersdozen.jpg",
+          "optionsPreset": "bakersDozen"
+        }
+      ]
+    },
+    {
       "category": "Most Popular",
       "items": [
         {
@@ -531,67 +592,6 @@
           "price": "$8.00",
           "optionsPreset": "breakfastBagel",
           "image": "images/bagel_sandwiches21.jpg"
-        }
-      ]
-    },
-    {
-      "category": "Bagels",
-      "items": [
-        {
-          "name": "Classic Bagel with Plain Cream Cheese",
-          "desc": "Freshly baked classic bagels with plain cream cheese",
-          "price": "$4.00",
-          "image": "images/bagel/bagel_cream_cheese2.jpg",
-          "optionsPreset": "classicBagelwithCream"
-        },
-        {
-          "name": "Gourmet Bagel with Plain Cream Cheese",
-          "desc": "Topped with extra toppings for more flavor with plain cream cheese",
-          "price": "$4.30",
-          "image": "images/bagel/bagel_cream_cheese2.jpg",
-          "optionsPreset": "gourmetBagelwithCream"
-        },
-        {
-          "name": "Special Bagel with Plain Cream Cheese",
-          "desc": "Unique flavors baked fresh daily with plain cream cheese",
-          "price": "$4.50",
-          "image": "images/bagel/bagel_cream_cheese2.jpg",
-          "optionsPreset": "specialBagelwithCream"
-        },
-        {
-          "name": "Any Bagel with Any Flavor Cream Cheese",
-          "desc": "Any bagel with plain cream cheese",
-          "price": "$4.99",
-          "image": "images/bagel/bagel_cream_cheese2.jpg",
-          "optionsPreset": "bagelWithCreamCheese"
-        },
-        {
-          "name": "Classic Bagel with No Cream Cheese",
-          "desc": "Freshly baked classic bagels",
-          "price": "$1.95",
-          "image": "images/bagel/classic_bagel.jpg",
-          "optionsPreset": "classicBagelwithCream"
-        },
-        {
-          "name": "Gourmet Bagel with No Cream Cheese",
-          "desc": "Topped with extra toppings for more flavor",
-          "price": "$2.05",
-          "image": "images/bagel/gourmet_bagel.jpg",
-          "optionsPreset": "gourmetBagelwithCream"
-        },
-        {
-          "name": "Special Bagel with No Cream Cheese",
-          "desc": "Unique flavors baked fresh daily",
-          "price": "$2.20",
-          "image": "images/bagel/special_bagel.jpg",
-          "optionsPreset": "specialBagelwithCream"
-        },
-        {
-          "name": "Bakers Dozen",
-          "desc": "Choose up to ANY 13 bagels",
-          "price": "$25.50",
-          "image": "images/bagel/bakersdozen.jpg",
-          "optionsPreset": "bakersDozen"
         }
       ]
     },
