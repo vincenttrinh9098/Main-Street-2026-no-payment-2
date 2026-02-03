@@ -517,6 +517,13 @@
           "price": "$6.50",
           "image": "images/drinks/thai_tea_snow_smoothie.jpg",
           "optionsPreset": "milkTeaToppings"
+        },
+        {
+          "name": "Testing",
+          "desc": "this is to test",
+          "price": "$9.25",
+          "image": "images/placeholder.png",
+          "optionsPreset": "sandwich"
         }
       ]
     },
