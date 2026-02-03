@@ -5,13 +5,20 @@ document.addEventListener("DOMContentLoaded", () => {
       return res.json();
     })
     .then(data => {
+      // --- Helper Function: Fixes the leading slash 404 issue ---
+      const fixPath = (path) => {
+        if (!path) return '';
+        // If path starts with '/', remove it to make it relative to the project folder
+        return path.startsWith('/') ? path.substring(1) : path;
+      };
+
       // HERO
       document.getElementById('hero-title').innerHTML =
         data.hero.title.replace(' ', '<br>');
       document.getElementById('hero-subtitle').textContent =
         data.hero.subtitle;
-      document.getElementById('hero-image').src =
-        data.hero.image;
+      // Use the helper here
+      document.getElementById('hero-image').src = fixPath(data.hero.image);
 
       // SECTIONS
       data.sections.forEach(section => {
@@ -19,8 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
           section.title;
         document.getElementById(`section-${section.id}-desc`).textContent =
           section.description;
-        document.getElementById(`section-${section.id}-image`).src =
-          section.image;
+        // Use the helper here
+        document.getElementById(`section-${section.id}-image`).src = fixPath(section.image);
       });
 
       // POPULAR
@@ -32,16 +39,16 @@ document.addEventListener("DOMContentLoaded", () => {
       const grid = document.getElementById('popular-grid');
       grid.innerHTML = '';
 
-
-      console.log("Popular items:", data.popular.items);
       data.popular.items.forEach(item => {
         const div = document.createElement('div');
         div.className = 'popular-item';
 
+        // Use the helper for the <img> tag
+        const cleanImgPath = fixPath(item.img);
         
         div.innerHTML = `
           <a href="menu-page.html" class="popular-link">
-            <img src="${item.img}" alt="${item.title}">
+            <img src="${cleanImgPath}" alt="${item.title}">
             <div class="popular-info">
               <h3>${item.title}</h3>
               <p>${item.desc}</p>
