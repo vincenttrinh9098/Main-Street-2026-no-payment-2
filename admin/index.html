@@ -4,63 +4,55 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Main Street Bagel Admin</title>
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   </head>
   <body>
     <script src="https://unpkg.com/decap-cms@^3.10.0/dist/decap-cms.js"></script>
 
-<script>
-  // 1. Path Fixer
-  const fixPath = (path) => {
-    if (!path) return '';
-    return path.startsWith('/') ? path.substring(1) : path;
-  };
+    <script>
+      // 1. Helper: Fixes image paths for GitHub Pages subfolder
+      const fixPath = (path) => (path && path.startsWith('/') ? path.substring(1) : path);
 
-  // 2. Defensive Preview Component
-  const HomePreview = ({ entry }) => {
-    // entry.getIn(['data']) can be null during initial load
-    const data = entry.getIn(['data']) ? entry.getIn(['data']).toJS() : {};
+      // 2. Component: Using the CMS's internal React engine to prevent crashes
+      const HomePreview = createClass({
+        render: function() {
+          const { entry, h } = this.props;
+          const data = entry.getIn(['data']).toJS();
 
-    // Use "Optional Chaining" (?.) to prevent crashes if objects are missing
-    return React.createElement('div', { 
-      style: { padding: '20px', fontFamily: 'sans-serif' } 
-    },
-      // Hero Section
-      React.createElement('section', { style: { textAlign: 'center', padding: '20px', background: '#f9f9f9' } },
-        React.createElement('h1', null, data.hero?.title || 'Title Missing'),
-        React.createElement('p', null, data.hero?.subtitle || ''),
-        data.hero?.image && React.createElement('img', { 
-          src: fixPath(data.hero.image), 
-          style: { width: '100%', maxWidth: '400px' } 
-        })
-      ),
+          // If no data yet, show a simple loading message
+          if (!data) return h('div', {}, 'Loading preview...');
 
-      // Sections List - Add a check to ensure it's an array
-      Array.isArray(data.sections) && data.sections.map((s, i) => (
-        React.createElement('div', { key: i, style: { marginTop: '20px' } },
-          React.createElement('h3', null, s.title || 'New Section'),
-          React.createElement('p', null, s.description || ''),
-          s.image && React.createElement('img', { src: fixPath(s.image), style: { width: '100px' } })
-        )
-      )),
+          return h('div', { style: { padding: '20px', fontFamily: 'sans-serif' } },
+            // HERO PREVIEW
+            h('section', { style: { textAlign: 'center', background: '#f5f5f5', padding: '20px', borderRadius: '8px' } },
+              h('h1', { style: { margin: '0' } }, data.hero?.title || 'Title'),
+              h('p', {}, data.hero?.subtitle),
+              data.hero?.image && h('img', { 
+                src: fixPath(data.hero.image), 
+                style: { width: '100%', maxWidth: '300px', borderRadius: '5px', marginTop: '10px' } 
+              })
+            ),
 
-      // Popular Items - Ensure nested data exists
-      React.createElement('h2', { style: { marginTop: '30px' } }, data.popular?.title || 'Popular Items'),
-      React.createElement('div', { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' } },
-        Array.isArray(data.popular?.items) && data.popular.items.map((item, i) => (
-          React.createElement('div', { key: i, style: { border: '1px solid #eee', padding: '5px' } },
-            item.img && React.createElement('img', { src: fixPath(item.img), style: { width: '100%' } }),
-            React.createElement('b', { style: { display: 'block' } }, item.title || 'Item Name')
-          )
-        ))
-      )
-    );
-  };
+            // SECTIONS PREVIEW
+            h('h2', { style: { marginTop: '30px' } }, 'Website Sections'),
+            (data.sections || []).map((s, i) => h('div', { key: i, style: { borderBottom: '1px solid #eee', padding: '10px 0' } },
+              h('h4', { style: { margin: '0' } }, s.title),
+              s.image && h('img', { src: fixPath(s.image), style: { height: '60px', borderRadius: '4px' } })
+            )),
 
-  // 3. Register
-  CMS.registerPreviewTemplate("homepage", HomePreview);
-</script>
+            // POPULAR ITEMS PREVIEW
+            h('h2', { style: { marginTop: '30px' } }, data.popular?.title || 'Popular Items'),
+            h('div', { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' } },
+              (data.popular?.items || []).map((item, i) => h('div', { key: i, style: { border: '1px solid #ddd', padding: '10px' } },
+                item.img && h('img', { src: fixPath(item.img), style: { width: '100%', borderRadius: '4px' } }),
+                h('div', { style: { fontWeight: 'bold', fontSize: '14px' } }, item.title)
+              ))
+            )
+          );
+        }
+      });
 
+      // 3. Register: Connects the 'homepage' name in config.yml to this component
+      CMS.registerPreviewTemplate("homepage", HomePreview);
+    </script>
   </body>
 </html>
