@@ -145,17 +145,16 @@ collections:
                   - label: "Options Preset"
                     name: "optionsPreset"
                     widget: "select"
-                    options: [
-                      "none", 
-                      "sandwich", 
-                      "milkTeaToppings", 
-                      "classicBagelwithCream", 
-                      "gourmetBagelwithCream", 
-                      "specialBagelwithCream", 
-                      "bagelWithCreamCheese", 
-                      "breakfastBagel", 
-                      "breakfastCroissant"
-                    ]
+                    options:
+                    - { label: "None (Basic Item)", value: "none" }
+                    - { label: "Bread Selection (Sandwiches)", value: "sandwich" }
+                    - { label: "Milk Tea Toppings", value: "milkTeaToppings" }
+                    - { label: "Classic Bagel Cream Cheese Choices", value: "classicBagelwithCream" }
+                    - { label: "Gourmet Bagel Cream Cheese Choices", value: "gourmetBagelwithCream" }
+                    - { label: "Special Bagel Cream Cheese Choices", value: "specialBagelwithCream" }
+                    - { label: "Full Bagel & Cream Cheese List", value: "bagelWithCreamCheese" }
+                    - { label: "Toppings for Breakfast Bagels", value: "breakfastBagel" }
+                    - { label: "Croissant Proteins & Extras", value: "breakfastCroissant" }
 
           # --- PART 2: OPTION PRESETS (Protects your Radio/Checkbox Logic) ---
           - label: "Option Presets (Required Logic)"
