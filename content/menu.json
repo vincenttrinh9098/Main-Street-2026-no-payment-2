@@ -1035,6 +1035,18 @@
           "optionsPreset": "milkTeaToppings"
         }
       ]
+    },
+    {
+      "category": "Testing new category",
+      "items": [
+        {
+          "name": "testing cat",
+          "desc": "this is a test",
+          "price": "$10.0",
+          "image": "images/bagel_sandwiches.jpeg",
+          "optionsPreset": "milkTeaToppings"
+        }
+      ]
     }
   ]
 }
