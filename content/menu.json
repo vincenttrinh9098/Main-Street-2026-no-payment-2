@@ -519,11 +519,18 @@
           "optionsPreset": "milkTeaToppings"
         },
         {
-          "name": "Testing",
+          "name": "Drink Test",
           "desc": "this is to test",
           "price": "$9.25",
           "image": "images/placeholder.png",
-          "optionsPreset": "sandwich"
+          "optionsPreset": "milkTeaToppings"
+        },
+        {
+          "name": "Food Test",
+          "desc": "new fod item",
+          "price": "$8.00",
+          "optionsPreset": "breakfastBagel",
+          "image": "images/bagel_sandwiches21.jpg"
         }
       ]
     },
