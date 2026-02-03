@@ -25,9 +25,9 @@
     },
     {
       "id": "drinks",
-      "title": "Refreshing Drinks",
-      "description": "Discover our drink menu, featuring everything from coffee to creamy smoothies to flavorful milk teas — including customer favorites like our Vietnamese Ice Coffee, Lava Flow Smoothie and Taro Milk Tea.",
-      "image": "images/drinks/lava_flow_smoothie.jpg",
+      "title": "Testing",
+      "description": "Discover our drink menu, featuring everything from coffee to creamy smoothies to flavorful milk teas — including customer favorites like our Vietnamese Ice Coffee, Lava Flow Smoothie and Taro Milk Tea. TESTTTTING",
+      "image": "images/212955c6-b805-47a4-b3fd-749467b7fcf6-1-.png",
       "ctaText": "Order Now",
       "ctaLink": "menu-page.html",
       "reverse": true
