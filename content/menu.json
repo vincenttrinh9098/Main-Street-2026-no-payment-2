@@ -456,25 +456,11 @@
       "category": "Most Popular",
       "items": [
         {
-          "name": "Nova Lox Bagel",
-          "desc": "Bagel with smoked salmon & cream cheese topped with onions & tomatoes",
-          "price": "$10.99",
-          "image": "images/bagel/nova_lox.jpg",
-          "optionsPreset": "breakfastBagel"
-        },
-        {
           "name": "Breakfast Egg Sausage Cheese Bagel",
           "desc": "Bagel with sausage, cheese & egg",
           "price": "$8.25",
           "image": "images/bagel/breakfast_sausage.jpg",
           "optionsPreset": "breakfastBagel"
-        },
-        {
-          "name": "Vietnamese Coffee",
-          "desc": "Rich & sweet iced coffee",
-          "price": "$6.50",
-          "image": "images/drinks/vietnamese_coffee.jpg",
-          "optionsPreset": "milkTeaToppings"
         },
         {
           "name": "Breakfast Egg Ham Cheese Bagel",
@@ -498,11 +484,25 @@
           "optionsPreset": "breakfastCroissant"
         },
         {
+          "name": "Nova Lox Bagel",
+          "desc": "Bagel with smoked salmon & cream cheese topped with onions & tomatoes",
+          "price": "$10.99",
+          "image": "images/bagel/nova_lox.jpg",
+          "optionsPreset": "breakfastBagel"
+        },
+        {
           "name": "Turkey Bacon Avocado Sandwich",
           "desc": "Turkey, bacon, avocado, & vegetables on fresh bread",
           "price": "$9.75",
           "image": "images/sandwich/turkey_bacon_avacado_sandwich.jpg",
           "optionsPreset": "sandwich"
+        },
+        {
+          "name": "Vietnamese Coffee",
+          "desc": "Rich & sweet iced coffee",
+          "price": "$6.50",
+          "image": "images/drinks/vietnamese_coffee.jpg",
+          "optionsPreset": "milkTeaToppings"
         },
         {
           "name": "Lava Flow Smoothie",
@@ -517,74 +517,6 @@
           "price": "$6.50",
           "image": "images/drinks/thai_tea_snow_smoothie.jpg",
           "optionsPreset": "milkTeaToppings"
-        }
-      ]
-    },
-    {
-      "category": "Specialty",
-      "items": [
-        {
-          "name": "Pepperoni Pizza Bagel",
-          "desc": "Bagel topped with pepperoni, marinara, & cheese",
-          "price": "$4.50",
-          "image": "images/specialty/pep_pizza_bagel.jpg",
-          "optionsPreset": "none"
-        },
-        {
-          "name": "Plain Bagel Dog",
-          "desc": "Classic hot dog wrapped in a fresh plain bagel",
-          "price": "$4.75",
-          "image": "images/specialty/plain_bagel_dog.jpg",
-          "optionsPreset": "none"
-        },
-        {
-          "name": "Jalapeño Bagel Dog",
-          "desc": "Hot dog wrapped in a jalapeño-flavored bagel",
-          "price": "$5.25",
-          "image": "images/specialty/jalapeno_bagel_dog.jpg",
-          "optionsPreset": "none"
-        },
-        {
-          "name": "Parmesan Bagel Dog",
-          "desc": "Hot dog wrapped in a parmesan cheese bagel",
-          "price": "$5.25",
-          "image": "images/specialty/parmesan_bagel_dog.jpg",
-          "optionsPreset": "none"
-        },
-        {
-          "name": "Butter Croissant",
-          "desc": "Flaky, buttery croissant baked fresh",
-          "price": "$3.25",
-          "image": "images/specialty/butter_croissant.jpg",
-          "optionsPreset": "none"
-        },
-        {
-          "name": "Strawberry Scone",
-          "desc": "Sweet scone made with real strawberries",
-          "price": "$4.00",
-          "image": "images/specialty/strawberry_scone.jpg",
-          "optionsPreset": "none"
-        },
-        {
-          "name": "Blueberry Scone",
-          "desc": "Soft baked scone with fresh blueberries",
-          "price": "$4.00",
-          "image": "images/specialty/blueberry_scone.jpg",
-          "optionsPreset": "none"
-        },
-        {
-          "name": "Chocolate Chip Scone",
-          "desc": "Classic scone loaded with chocolate chips",
-          "price": "$4.00",
-          "image": "images/specialty/chocolate_chip_scone.jpg",
-          "optionsPreset": "none"
-        },
-        {
-          "name": "Cinnamon Roll",
-          "desc": "Soft cinnamon roll with sweet icing",
-          "price": "$5.25",
-          "image": "images/specialty/cinnamon_roll.jpg",
-          "optionsPreset": "none"
         }
       ]
     },
@@ -728,6 +660,128 @@
           "price": "$9.75",
           "image": "images/sandwich/turkey_cranberry_sandwich.jpg",
           "optionsPreset": "sandwich"
+        }
+      ]
+    },
+    {
+      "category": "Specialty",
+      "items": [
+        {
+          "name": "Pepperoni Pizza Bagel",
+          "desc": "Bagel topped with pepperoni, marinara, & cheese",
+          "price": "$4.50",
+          "image": "images/specialty/pep_pizza_bagel.jpg",
+          "optionsPreset": "none"
+        },
+        {
+          "name": "Plain Bagel Dog",
+          "desc": "Classic hot dog wrapped in a fresh plain bagel",
+          "price": "$4.75",
+          "image": "images/specialty/plain_bagel_dog.jpg",
+          "optionsPreset": "none"
+        },
+        {
+          "name": "Jalapeño Bagel Dog",
+          "desc": "Hot dog wrapped in a jalapeño-flavored bagel",
+          "price": "$5.25",
+          "image": "images/specialty/jalapeno_bagel_dog.jpg",
+          "optionsPreset": "none"
+        },
+        {
+          "name": "Parmesan Bagel Dog",
+          "desc": "Hot dog wrapped in a parmesan cheese bagel",
+          "price": "$5.25",
+          "image": "images/specialty/parmesan_bagel_dog.jpg",
+          "optionsPreset": "none"
+        },
+        {
+          "name": "Butter Croissant",
+          "desc": "Flaky, buttery croissant baked fresh",
+          "price": "$3.25",
+          "image": "images/specialty/butter_croissant.jpg",
+          "optionsPreset": "none"
+        },
+        {
+          "name": "Strawberry Scone",
+          "desc": "Sweet scone made with real strawberries",
+          "price": "$4.00",
+          "image": "images/specialty/strawberry_scone.jpg",
+          "optionsPreset": "none"
+        },
+        {
+          "name": "Blueberry Scone",
+          "desc": "Soft baked scone with fresh blueberries",
+          "price": "$4.00",
+          "image": "images/specialty/blueberry_scone.jpg",
+          "optionsPreset": "none"
+        },
+        {
+          "name": "Chocolate Chip Scone",
+          "desc": "Classic scone loaded with chocolate chips",
+          "price": "$4.00",
+          "image": "images/specialty/chocolate_chip_scone.jpg",
+          "optionsPreset": "none"
+        },
+        {
+          "name": "Cinnamon Roll",
+          "desc": "Soft cinnamon roll with sweet icing",
+          "price": "$5.25",
+          "image": "images/specialty/cinnamon_roll.jpg",
+          "optionsPreset": "none"
+        }
+      ]
+    },
+    {
+      "category": "Iced Drinks",
+      "items": [
+        {
+          "name": "Vietnamese Coffee",
+          "desc": "Rich iced Vietnamese coffee",
+          "price": "$6.50",
+          "image": "images/drinks/vietnamese_coffee.jpg",
+          "optionsPreset": "none"
+        },
+        {
+          "name": "Blended Latte",
+          "desc": "Iced latte blended with ice",
+          "price": "$6.00",
+          "image": "images/drinks/vietnamese_coffee.jpg",
+          "optionsPreset": "none"
+        },
+        {
+          "name": "Blended Mocha",
+          "desc": "Chocolate mocha iced blended drink",
+          "price": "$6.00",
+          "image": "images/drinks/vietnamese_coffee.jpg",
+          "optionsPreset": "none"
+        },
+        {
+          "name": "Blended Vietnamese Coffee",
+          "desc": "Iced Vietnamese coffee blended with ice",
+          "price": "$7.50",
+          "image": "images/drinks/vietnamese_coffee.jpg",
+          "optionsPreset": "none"
+        },
+        {
+          "name": "Ice Black Vietnamese Coffee",
+          "desc": "Iced strong black coffee",
+          "price": "$4.50",
+          "image": "images/drinks/vietnamese_coffee.jpg",
+          "optionsPreset": "none"
+        },
+        {
+          "name": "Iced Mocha",
+          "desc": "Chocolate mocha on ice",
+          "price": "$5.25",
+          "image": "images/drinks/vietnamese_coffee.jpg",
+          "optionsPreset": "none"
+        },
+        {
+          "name": "Iced Latte",
+          "desc": "Iced latte with smooth milk",
+          "price": "$4.25",
+          "image": "images/drinks/vietnamese_coffee.jpg",
+          "optionsPreset": "none"
         }
       ]
     },
@@ -965,60 +1019,6 @@
           "price": "$6.50",
           "image": "images/drinks/thai_tea_snow_smoothie.jpg",
           "optionsPreset": "milkTeaToppings"
-        }
-      ]
-    },
-    {
-      "category": "Iced Drinks",
-      "items": [
-        {
-          "name": "Vietnamese Coffee",
-          "desc": "Rich iced Vietnamese coffee",
-          "price": "$6.50",
-          "image": "images/drinks/vietnamese_coffee.jpg",
-          "optionsPreset": "none"
-        },
-        {
-          "name": "Blended Latte",
-          "desc": "Iced latte blended with ice",
-          "price": "$6.00",
-          "image": "images/drinks/vietnamese_coffee.jpg",
-          "optionsPreset": "none"
-        },
-        {
-          "name": "Blended Mocha",
-          "desc": "Chocolate mocha iced blended drink",
-          "price": "$6.00",
-          "image": "images/drinks/vietnamese_coffee.jpg",
-          "optionsPreset": "none"
-        },
-        {
-          "name": "Blended Vietnamese Coffee",
-          "desc": "Iced Vietnamese coffee blended with ice",
-          "price": "$7.50",
-          "image": "images/drinks/vietnamese_coffee.jpg",
-          "optionsPreset": "none"
-        },
-        {
-          "name": "Ice Black Vietnamese Coffee",
-          "desc": "Iced strong black coffee",
-          "price": "$4.50",
-          "image": "images/drinks/vietnamese_coffee.jpg",
-          "optionsPreset": "none"
-        },
-        {
-          "name": "Iced Mocha",
-          "desc": "Chocolate mocha on ice",
-          "price": "$5.25",
-          "image": "images/drinks/vietnamese_coffee.jpg",
-          "optionsPreset": "none"
-        },
-        {
-          "name": "Iced Latte",
-          "desc": "Iced latte with smooth milk",
-          "price": "$4.25",
-          "image": "images/drinks/vietnamese_coffee.jpg",
-          "optionsPreset": "none"
         }
       ]
     }
