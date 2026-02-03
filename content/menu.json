@@ -534,7 +534,7 @@
         },
         {
           "name": "test",
-          "price": "$6.00",
+          "price": "$$6.00",
           "image": "images/placeholder.png",
           "optionsPreset": "specialBagelwithCream"
         }
