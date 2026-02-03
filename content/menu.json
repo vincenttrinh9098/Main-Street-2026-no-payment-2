@@ -5,11 +5,11 @@
         "title": "Bread Choice (Required)",
         "type": "radio",
         "choices": [
-          { "label": "Plain roll", "price": 1.00 },
-          { "label": "Score garlic parmesan roll", "price": 1.00 },
-          { "label": "Jalapeno Score garlic parmesan roll", "price": 1.00 },
-          { "label": "Cheddar roll", "price": 1.00 },
-          { "label": "Croissant", "price": 2.00 },
+          { "label": "Plain roll", "price": 1.0 },
+          { "label": "Score garlic parmesan roll", "price": 1.0 },
+          { "label": "Jalapeno Score garlic parmesan roll", "price": 1.0 },
+          { "label": "Cheddar roll", "price": 1.0 },
+          { "label": "Croissant", "price": 2.0 },
           { "label": "Bagel", "price": 0 }
         ]
       }
@@ -24,8 +24,8 @@
           { "label": "Rainbow Jelly", "price": 0.75 },
           { "label": "Coffee Jelly", "price": 0.75 },
           { "label": "Mango Jelly", "price": 0.75 },
-          { "label": "Crystal white pearls", "price": 1.00 },
-          { "label": "Mango popping", "price": 1.00 }
+          { "label": "Crystal white pearls", "price": 1.0 },
+          { "label": "Mango popping", "price": 1.0 }
         ]
       }
     ],
@@ -129,13 +129,13 @@
         "title": "Additional Extras",
         "type": "checkbox",
         "choices": [
-          { "label": "Extra meat", "price": 3.50 },
-          { "label": "Sprouts", "price": 1.50 },
+          { "label": "Extra meat", "price": 3.5 },
+          { "label": "Sprouts", "price": 1.5 },
           { "label": "Tomatoes", "price": 1.25 },
           { "label": "Onion", "price": 1.25 },
           { "label": "Cucumbers", "price": 1.25 },
-          { "label": "Butter", "price": 1.50 },
-          { "label": "Spinach & Mushrooms", "price": 1.50 }
+          { "label": "Butter", "price": 1.5 },
+          { "label": "Spinach & Mushrooms", "price": 1.5 }
         ]
       },
       {
@@ -144,8 +144,8 @@
         "choices": [
           { "label": "Cheddar Cheese", "price": 0.25 },
           { "label": "Jack Cheese", "price": 0.25 },
-          { "label": "Add Extra Eggs", "price": 1.50 },
-          { "label": "Substitute to Egg Whites", "price": 2.50 }
+          { "label": "Add Extra Eggs", "price": 1.5 },
+          { "label": "Substitute to Egg Whites", "price": 2.5 }
         ]
       }
     ],
@@ -164,13 +164,13 @@
         "title": "Additional Extras",
         "type": "checkbox",
         "choices": [
-          { "label": "Extra meat", "price": 3.50 },
-          { "label": "Sprouts", "price": 1.50 },
+          { "label": "Extra meat", "price": 3.5 },
+          { "label": "Sprouts", "price": 1.5 },
           { "label": "Tomatoes", "price": 1.25 },
           { "label": "Onion", "price": 1.25 },
           { "label": "Cucumbers", "price": 1.25 },
-          { "label": "Butter", "price": 1.50 },
-          { "label": "Spinach & Mushrooms", "price": 1.50 }
+          { "label": "Butter", "price": 1.5 },
+          { "label": "Spinach & Mushrooms", "price": 1.5 }
         ]
       }
     ]
@@ -237,7 +237,7 @@
       "category": "Hot Drinks",
       "items": [
         { "name": "Latte", "desc": "16 oz Smooth Hot latte", "price": "$4.25", "image": "images/drinks/latte.jpg" },
-        { "name": "Mocha", "desc": "16 oz Creamy hot mocha drink", "price": "$5.25", "image: ": "images/drinks/mocha.jpg" },
+        { "name": "Mocha", "desc": "16 oz Creamy hot mocha drink", "price": "$5.25", "image": "images/drinks/mocha.jpg" },
         { "name": "Hot Tea", "desc": "16 oz Freshly brewed hot tea", "price": "$3.50", "image": "images/drinks/hot_tea.jpg" }
       ]
     },
@@ -276,7 +276,7 @@
       "category": "Snow Smoothies",
       "items": [
         { "name": "Honeydew Snow Smoothie", "desc": "Honeydew blended with ice", "price": "$6.50", "image": "images/drinks/honeydew_snow_smoothie.jpg", "optionsPreset": "milkTeaToppings" },
-        { "name": "Mango Snow Smoothie", "desc": "Fresh mango blended icy", "price": "$6.50", "image: ": "images/drinks/mango_snow_smoothie.jpg", "optionsPreset": "milkTeaToppings" },
+        { "name": "Mango Snow Smoothie", "desc": "Fresh mango blended icy", "price": "$6.50", "image": "images/drinks/mango_snow_smoothie.jpg", "optionsPreset": "milkTeaToppings" },
         { "name": "Coconut Snow Smoothie", "desc": "Coconut blended icy smoothie", "price": "$6.50", "image": "images/drinks/coconut_snow_smoothie.jpg", "optionsPreset": "milkTeaToppings" },
         { "name": "Avocado Snow Smoothie", "desc": "Creamy avocado icy blend", "price": "$6.50", "image": "images/drinks/avacado_snow_smoothie.jpg", "optionsPreset": "milkTeaToppings" },
         { "name": "Coffee Snow Smoothie", "desc": "Iced coffee blended with ice", "price": "$6.50", "image": "images/drinks/coffee_snow_smoothie.jpg", "optionsPreset": "milkTeaToppings" },

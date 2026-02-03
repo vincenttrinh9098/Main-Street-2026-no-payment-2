@@ -118,3 +118,60 @@ collections:
                   - label: "Description"
                     name: "desc"
                     widget: "text"
+
+  - name: "menu_collection"
+    label: "Menu & Pricing"
+    files:
+        - file: "content/menu.json"
+          label: "Restaurant Menu"
+          name: "menu_data"
+          fields:
+            # --- MENU SECTIONS (Categories & Items) ---
+            - label: "Menu Categories"
+              name: "menuData"
+              widget: "list"
+              summary: "{{category}}"
+              fields:
+                - {label: "Category Name", name: "category", widget: "string", hint: "e.g., Bagel Sandwiches, Beverages"}
+                - label: "Items"
+                  name: "items"
+                  widget: "list"
+                  summary: "{{name}} - {{price}}"
+                  fields:
+                    - {label: "Item Name", name: "name", widget: "string"}
+                    - {label: "Description", name: "desc", widget: "text", required: false}
+                    - {label: "Price (e.g. $8.25)", name: "price", widget: "string"}
+                    - {label: "Image", name: "image", widget: "image"}
+                    - label: "Options Preset"
+                      name: "optionsPreset"
+                      widget: "select"
+                      hint: "Must match a preset name below"
+                      options: ["none", "bagelWithCreamCheese", "sandwich", "beverages", "bakersDozen"]
+
+            # --- OPTION PRESETS (The Rules for the Radio Buttons) ---
+            - label: "Option Presets"
+              name: "optionPresets"
+              widget: "object"
+              fields:
+                - label: "Bagel with Cream Cheese Presets"
+                  name: "bagelWithCreamCheese"
+                  widget: "list"
+                  fields: &preset_fields
+                    - {label: "Group Title", name: "title", widget: "string", hint: "e.g., Select Bagel"}
+                    - {label: "Type", name: "type", widget: "select", options: ["radio", "checkbox"]}
+                    - label: "Choices"
+                      name: "choices"
+                      widget: "list"
+                      fields:
+                        - {label: "Label", name: "label", widget: "string"}
+                        - {label: "Extra Price", name: "price", widget: "number", value_type: "float", default: 0}
+                
+                - label: "Sandwich Options"
+                  name: "sandwich"
+                  widget: "list"
+                  fields: *preset_fields
+
+                - label: "Beverage Options"
+                  name: "beverages"
+                  widget: "list"
+                  fields: *preset_fields
