@@ -531,6 +531,12 @@
           "price": "$8.00",
           "optionsPreset": "breakfastBagel",
           "image": "images/bagel_sandwiches21.jpg"
+        },
+        {
+          "name": "test",
+          "price": "$6.00",
+          "image": "images/placeholder.png",
+          "optionsPreset": "specialBagelwithCream"
         }
       ]
     },
