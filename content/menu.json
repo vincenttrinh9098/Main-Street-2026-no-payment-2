@@ -808,6 +808,13 @@
           "price": "$3.50",
           "image": "images/drinks/hot_tea.jpg",
           "optionsPreset": "none"
+        },
+        {
+          "name": "Matcha Latte",
+          "desc": "Hot Matcha Latte with Oat Milk",
+          "price": "$8.50",
+          "image": "images/iced-matcha-latte.jpg",
+          "optionsPreset": "milkTeaToppings"
         }
       ]
     },
