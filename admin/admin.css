@@ -1,0 +1,13 @@
+/* Replace the Decap logo with the Cafe Logo */
+.nc-app-header-logo, .nc-login-logo {
+  background-image: url('https://vincenttrinh9098.github.io/Main-Street-2026-no-payment-2/logo.png') !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  width: 200px !important;
+}
+
+/* Change the "Login" button to match the cafe's brand colors */
+.nc-login-button {
+  background-color: #D2691E !important; /* Example: Bagel Brown */
+  color: white !important;
+}

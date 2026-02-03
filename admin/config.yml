@@ -1,3 +1,6 @@
+# UX Branding
+display_url: https://vincenttrinh9098.github.io/Main-Street-2026-no-payment-2
+
 backend:
   name: git-gateway
   repo: vincenttrinh9098/Main-Street-2026-no-payment-2
@@ -14,100 +17,54 @@ public_folder: "/images/uploads"
 publish_mode: simple
 
 collections:
-  - name: "site"
-    label: "Homepage"
+  - name: "content"
+    label: "Website Editor"
+    editor:
+      preview: false # Set to true if you build a custom preview later
     files:
       - file: "content/home.json"
-        label: "Homepage Content"
-        name: "homepage"
+        label: "1. Hero Section (Top of Page)"
+        name: "hero_section"
         fields:
+          - label: "Main Headline"
+            name: "hero.title"
+            widget: "string"
+            hint: "The big text at the very top (e.g., 'Fresh Bagels Every Morning')"
+          - label: "Sub-headline"
+            name: "hero.subtitle"
+            widget: "text"
+            hint: "The smaller text below the main headline."
+          - label: "Background Image"
+            name: "hero.image"
+            widget: "image"
 
-          # --------------------
-          # HERO SECTION
-          # --------------------
-          - label: "Hero Section"
-            name: "hero"
-            widget: "object"
-            fields:
-              - label: "Hero Title"
-                name: "title"
-                widget: "string"
-
-              - label: "Hero Subtitle"
-                name: "subtitle"
-                widget: "text"
-
-              - label: "Hero Image"
-                name: "image"
-                widget: "image"
-
-          # --------------------
-          # MAIN SECTIONS
-          # --------------------
-          - label: "Homepage Sections"
+      - file: "content/home.json"
+        label: "2. Middle Sections"
+        name: "homepage_sections"
+        fields:
+          - label: "Content Blocks"
             name: "sections"
             widget: "list"
-            summary: "{{title}}"
+            summary: "Section: {{fields.title}}" # Shows the actual title in the list
             fields:
-              - label: "Section ID"
-                name: "id"
-                widget: "string"
-                hint: "Internal use only. Do not change unless instructed."
+              - { label: "Section Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Button Text", name: "ctaText", widget: "string", default: "Learn More" }
+              - { label: "Reverse Layout?", name: "reverse", widget: "boolean", default: false, hint: "Check this to flip the image and text positions." }
 
-              - label: "Section Title"
-                name: "title"
-                widget: "string"
-
-              - label: "Description"
-                name: "description"
-                widget: "text"
-
-              - label: "Image"
-                name: "image"
-                widget: "image"
-
-              - label: "CTA Button Text"
-                name: "ctaText"
-                widget: "string"
-
-              - label: "CTA Link"
-                name: "ctaLink"
-                widget: "string"
-                default: "menu-page.html"
-
-              - label: "Reverse Layout"
-                name: "reverse"
-                widget: "boolean"
-                default: false
-
-          # --------------------
-          # POPULAR ITEMS
-          # --------------------
-          - label: "Popular Section"
-            name: "popular"
-            widget: "object"
+      - file: "content/home.json"
+        label: "3. Popular Items Menu"
+        name: "popular_items"
+        fields:
+          - label: "Section Title"
+            name: "popular.title"
+            widget: "string"
+          - label: "Bagel List"
+            name: "popular.items"
+            widget: "list"
+            summary: "Bagel: {{fields.title}}" # Shows the bagel name in the list
             fields:
-              - label: "Section Title"
-                name: "title"
-                widget: "string"
-
-              - label: "Section Subtitle"
-                name: "subtitle"
-                widget: "string"
-
-              - label: "Popular Items"
-                name: "items"
-                widget: "list"
-                summary: "{{title}}"
-                fields:
-                  - label: "Image"
-                    name: "img"
-                    widget: "image"
-
-                  - label: "Item Title"
-                    name: "title"
-                    widget: "string"
-
-                  - label: "Description"
-                    name: "desc"
-                    widget: "text"
+              - { label: "Bagel Name", name: "title", widget: "string" }
+              - { label: "Price/Description", name: "desc", widget: "text" }
+              - { label: "Photo", name: "img", widget: "image" }
