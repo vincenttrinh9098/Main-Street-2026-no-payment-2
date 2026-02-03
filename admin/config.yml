@@ -1,6 +1,8 @@
-# UX Branding
+# 1. Dashboard Settings
 display_url: https://vincenttrinh9098.github.io/Main-Street-2026-no-payment-2
+logo_url: https://vincenttrinh9098.github.io/Main-Street-2026-no-payment-2/logo.png
 
+# 2. Your Working Backend
 backend:
   name: git-gateway
   repo: vincenttrinh9098/Main-Street-2026-no-payment-2
@@ -10,61 +12,52 @@ backend:
   auth_endpoint: /sites/a2ef3e52-9361-4b33-b064-b5b0323d37f1/pkce
   auth_token_endpoint: /sites/a2ef3e52-9361-4b33-b064-b5b0323d37f1/token
   gateway_url: https://gateway.decapbridge.com
-  
+
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
-
 publish_mode: simple
 
+# 3. Enhanced UX Collections
 collections:
   - name: "content"
     label: "Website Editor"
-    editor:
-      preview: false # Set to true if you build a custom preview later
+    description: "Select a section below to update the cafe website."
     files:
       - file: "content/home.json"
-        label: "1. Hero Section (Top of Page)"
+        label: "1. Header & Welcome (Hero)"
         name: "hero_section"
         fields:
-          - label: "Main Headline"
-            name: "hero.title"
-            widget: "string"
-            hint: "The big text at the very top (e.g., 'Fresh Bagels Every Morning')"
-          - label: "Sub-headline"
-            name: "hero.subtitle"
-            widget: "text"
-            hint: "The smaller text below the main headline."
-          - label: "Background Image"
-            name: "hero.image"
-            widget: "image"
+          - { label: "Main Headline", name: "hero.title", widget: "string", hint: "The large text at the top." }
+          - { label: "Sub-headline", name: "hero.subtitle", widget: "text" }
+          - { label: "Main Image", name: "hero.image", widget: "image" }
 
       - file: "content/home.json"
-        label: "2. Middle Sections"
-        name: "homepage_sections"
+        label: "2. Page Sections (Sandwiches, Drinks, etc.)"
+        name: "middle_sections"
         fields:
-          - label: "Content Blocks"
+          - label: "Website Sections"
             name: "sections"
             widget: "list"
-            summary: "Section: {{fields.title}}" # Shows the actual title in the list
+            summary: "Section: {{fields.title}}" # Shows 'Section: Sandwiches' in the list
             fields:
+              - { label: "Internal ID", name: "id", widget: "hidden" }
               - { label: "Section Title", name: "title", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
-              - { label: "Image", name: "image", widget: "image" }
-              - { label: "Button Text", name: "ctaText", widget: "string", default: "Learn More" }
-              - { label: "Reverse Layout?", name: "reverse", widget: "boolean", default: false, hint: "Check this to flip the image and text positions." }
+              - { label: "Description Text", name: "description", widget: "text" }
+              - { label: "Section Photo", name: "image", widget: "image" }
+              - { label: "Button Label", name: "ctaText", widget: "string" }
+              - { label: "Flip Layout?", name: "reverse", widget: "boolean", hint: "Check this to swap text and image sides." }
 
       - file: "content/home.json"
-        label: "3. Popular Items Menu"
+        label: "3. Most Popular Menu Items"
         name: "popular_items"
         fields:
-          - label: "Section Title"
-            name: "popular.title"
-            widget: "string"
-          - label: "Bagel List"
+          - { label: "Title", name: "popular.title", widget: "string" }
+          - { label: "Subtitle", name: "popular.subtitle", widget: "string" }
+          - label: "Menu Items"
             name: "popular.items"
             widget: "list"
-            summary: "Bagel: {{fields.title}}" # Shows the bagel name in the list
+            summary: "{{fields.title}} ({{fields.desc}})" # Displays Bagel Name and Price/Desc at a glance
             fields:
-              - { label: "Bagel Name", name: "title", widget: "string" }
-              - { label: "Price/Description", name: "desc", widget: "text" }
-              - { label: "Photo", name: "img", widget: "image" }
+              - { label: "Item Name", name: "title", widget: "string" }
+              - { label: "Short Description", name: "desc", widget: "string" }
+              - { label: "Item Photo", name: "img", widget: "image" }
