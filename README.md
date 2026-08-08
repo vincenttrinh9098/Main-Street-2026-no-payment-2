@@ -1,8 +1,23 @@
-# Main-Street-2026
+# Main Street Bagel Cafe
 
-Bagel shop website
+A commercial website developed for **Main Street Bagel Cafe**, a local bakery shop.
 
+## Live Website
 
-https://vincenttrinh9098.goatcounter.com/?period-start=2026-01-24&period-end=2026-01-31&filter=
-https://vercel.com/vincents-projects-7609c42a
-https://www.squarespace.com
+[Main Street Bagel Cafe](https://mainstbagelcafe.com/)
+
+## Description
+
+A  business website designed to provide customers with information about the cafe, its menu, location, and services.
+
+## Features
+
+* Business information and contact details
+* Menu display
+* Mobile-friendly interface
+* Modern and user-friendly layout
+
+## Project
+
+**Main Street Bagel Cafe**
+https://mainstbagelcafe.com/
